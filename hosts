@@ -10,3 +10,4 @@ all:
         eigrp_named_routers:
           hosts:
             R2:
+            R3:
