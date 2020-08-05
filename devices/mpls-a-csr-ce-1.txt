@@ -1,0 +1,56 @@
+hostname mpls-a-csr-ce-1
+!
+vrf definition sp-mpls-a
+ rd 3209:1
+ route-target both 1:101
+ !
+ address-family ipv4
+ exit-address-family
+!
+interface Loopback0
+ ip address 172.16.0.1 255.255.255.255
+ ip router isis
+!
+!
+interface GigabitEthernet1
+ ip address 192.168.99.2 255.255.255.0
+ no shut
+!
+interface GigabitEthernet2
+ ip router isis
+ mpls ip
+ ip address 172.16.254.1 255.255.255.0
+ no shut
+!
+interface GigabitEthernet3
+ vrf forwarding sp-mpls-a
+ ip address 172.16.1.1 255.255.255.0
+ no shut
+!
+interface GigabitEthernet4
+ vrf forwarding sp-mpls-a
+ ip address 172.16.2.1 255.255.255.0
+ no shut
+!
+router isis
+ net 49.0001.0000.0000.0001.00
+ metric-style wide
+ is-type level-2-only
+!
+router bgp 3209
+ bgp log-neighbor-changes
+ neighbor 172.16.0.2 remote-as 3209
+ !
+ !
+ address-family vpnv4
+  neighbor 172.16.0.2 activate
+  neighbor 172.16.0.2 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf sp-mpls-a
+  redistribute connected
+
+ exit-address-family
+!
+!
+route-map Allow permit 10

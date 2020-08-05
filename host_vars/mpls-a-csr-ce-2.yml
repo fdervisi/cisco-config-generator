@@ -1,0 +1,25 @@
+---
+cisco:
+  hostname: "mpls-a-csr-ce-2"
+  loopback0_ip_address: "172.16.0.2"
+  bgp_asn: "3209"
+  isis: "yes"
+  vrfs:
+    - vrf: "sp-mpls-a"
+      route_target: "1:101"
+  interfaces:
+    - interface_id: "1"
+      ip_address: "192.168.99.3 255.255.255.0"
+    - interface_id: "2"
+      ip_address: "172.16.254.2 255.255.255.0"
+      isis: "yes"
+    - interface_id: "3"
+      ip_address: "172.16.12.1 255.255.255.0"
+      vrf: "sp-mpls-a"
+    - interface_id: "4"
+      ip_address: "172.16.7.1 255.255.255.0"
+      vrf: "sp-mpls-a"
+  bgp:
+    - neighbor: "172.16.0.1"
+      remote_as: "3209"
+      update_source_loopback: "yes"
