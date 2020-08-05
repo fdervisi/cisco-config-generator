@@ -1,5 +1,5 @@
 ---
-cisco:
+
   hostname: "mpls-a-csr-ce-1"
   loopback0_ip_address: "172.16.0.1"  
   bgp_asn: "3209"
