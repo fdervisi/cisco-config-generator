@@ -10,5 +10,4 @@
 
     - name: "print template"
       pause:
-        seconds: 1
-        prompt: "{{ lookup('template', eigrp_path) }}"
+        msg: "{{ lookup('template', eigrp_path) }}"
