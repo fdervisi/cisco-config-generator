@@ -13,6 +13,6 @@
         msg: "{{ lookup('template', eigrp_path) }}"
 
    - name: "generate files"
-    template:
+     template:
       src: {{ lookup('template', eigrp_path) }}
       dest: debug.txt
