@@ -11,3 +11,8 @@
     - name: "print template"
       debug:
         msg: "{{ lookup('template', eigrp_path) }}"
+
+    - name: "Save Templates"
+      template: 
+        src: /templates/{{ eigrp_os_type }}_eigrp.j2
+        dest: /{{hostname}}.cfg
