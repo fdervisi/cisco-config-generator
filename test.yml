@@ -10,4 +10,4 @@
 
     - name: "print template"
       debug:
-        msg: "{{ lookup('template', eigrp_path) }}"
+        msg: "{{ lookup('template', eigrp_path) | trim }}"
