@@ -9,10 +9,5 @@
         eigrp_path: "templates/{{ eigrp_os_type }}_eigrp.j2"
 
     - name: "print template"
-      debug:
+      pause:
         msg: "{{ lookup('template', eigrp_path) }}"
-
-    - name: "generate files"
-      template:
-        src: "{{ lookup('template', eigrp_path) }}"
-        dest: debug.txt
