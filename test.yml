@@ -14,5 +14,5 @@
 
     - name: "generate files"
       template:
-        src: {{ lookup('template', eigrp_path) }}
+        src: "{{ lookup('template', eigrp_path) }}"
         dest: debug.txt
