@@ -16,3 +16,7 @@
       template: 
         src: templates/{{ eigrp_os_type }}_eigrp.j2
         dest: "{{hostname}}.test"
+
+    - name: "Print Files"
+      debug:
+        msg: R2.test
