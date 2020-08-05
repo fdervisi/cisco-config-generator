@@ -15,3 +15,4 @@ for hostfilename in glob.glob('./host_vars/*.yml'):
             groups[ hostgroup ]['hosts'].append( host['host_fqdn'] )
 
 print json.dumps(groups)
+
