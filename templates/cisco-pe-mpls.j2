@@ -54,14 +54,7 @@ router bgp {{ bgp_asn }}
 {% for vrf in vrfs %}
  address-family ipv4 vrf {{ vrf.vrf }}
   redistribute connected
-{% if vrf.neighbor %}
-  neighbor {{ vrf.neighbor }} remote-as {{ vrf.remote_as }}
-  neighbor {{ vrf.neighbor }} activate
-  neighbor {{ vrf.neighbor }} send-community
-  neighbor {{ vrf.neighbor }} route-map Allow out
- !
-{% else %} 
-{% endif %}
+
 
  exit-address-family
 !
