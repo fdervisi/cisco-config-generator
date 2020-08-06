@@ -1,1 +1,22 @@
 hostname {{ hostname }}
+!
+interface Loopback0
+ ip address {{ loopback0_ip_address }} 255.255.255.255
+!
+{% for interface in interfaces %}
+!
+interface GigabitEthernet{{ interface.interface_id }}
+ ip address {{ interface.ip_address }}
+ no shut
+{% endfor %}
+!
+router bgp {{ bgp_asn }}
+{% for peer in bgp %}
+ bgp log-neighbor-changes
+ neighbor {{ peer.neighbor }} remote-as {{ peer.remote_as }}
+ neighbor {{ peer.neighbor }} send-community
+ !
+{% endfor %}
+ !
+!
+route-map Allow permit 10
