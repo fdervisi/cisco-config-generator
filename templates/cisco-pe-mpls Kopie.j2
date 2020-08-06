@@ -1,5 +1,14 @@
 hostname {{ hostname }}
 !
+{% for vrf in vrfs %}
+vrf definition {{ vrf.vrf }}
+ rd {{ bgp_asn }}:{{ (loopback0_ip_address)[-1] }}
+ route-target both {{ vrf.route_target }}
+ !
+ address-family ipv4
+ exit-address-family
+!
+{% endfor %}
 interface Loopback0
  ip address {{ loopback0_ip_address }} 255.255.255.255
  ip router isis
