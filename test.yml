@@ -11,12 +11,16 @@
     - name: "print template"
       debug:
         msg: "{{ lookup('template', eigrp_path) }}"
+      register: response
+
 
     - name: "Save Templates"
       template: 
         src: templates/{{template}}_eigrp.j2
         dest: "{{hostname}}.test"
 
-    - name: "Print Files"
+  handlers:
+    - name: "Output Changes..."
+      listen: config_changed
       debug:
-        msg: "R2.test"
+        msg: "{{ response }}"
