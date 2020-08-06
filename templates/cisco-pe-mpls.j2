@@ -57,6 +57,7 @@ router bgp {{ bgp_asn }}
   neighbor {{ vrf.neighbor }} send-community
   neighbor {{ vrf.neighbor }} route-map Allow out
  !
+{% else %} 
 {% endif %}
 
  exit-address-family
