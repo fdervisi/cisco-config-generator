@@ -16,7 +16,8 @@
   interfaces:
     - interface_id: "1"
       ip_address: "192.168.99.2 255.255.255.0"
-      vrf: "sp-mpls-a"      
+      vrf: "sp-mpls-a"     
+      isis: "yes" 
     - interface_id: "2"
       ip_address: "172.16.254.1 255.255.255.0"
       isis: "yes"
@@ -24,9 +25,11 @@
     - interface_id: "3"
       ip_address: "172.16.1.1 255.255.255.0"
       vrf: "sp-mpls-a"
+      isis: "yes"
     - interface_id: "4"
       ip_address: "172.16.2.1 255.255.255.0"
       vrf: "sp-mpls-a"
+      isis: "yes"
   bgp:
     - neighbor: "172.16.0.2"
       remote_as: "3209"
