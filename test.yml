@@ -6,7 +6,7 @@
   tasks:
     - name: "First Task: Identify Correct Jinja Template"
       set_fact:
-        eigrp_path: "templates/{{ eigrp_os_type }}_eigrp.j2"
+        eigrp_path: "templates/named_eigrp.j2"
 
     - name: "print template"
       debug:
