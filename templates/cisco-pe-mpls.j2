@@ -4,9 +4,9 @@ interface Loopback0
  ip address {{ interface.isis }} 255.255.255.255
  ip router isis
 !
-{% for interface in interfaces %}
+{% for test in interfaces %}
 !
- ip address {{ interface }}
+ ip address {{ test }}
  no shut
 {% endfor %}
 !
