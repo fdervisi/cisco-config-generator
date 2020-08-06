@@ -3,7 +3,9 @@
   host_fqdn: R1
   host_groups:
     - PE
-  ansible_network_os: "ios"        
+  ansible_user: "fatos"
+  ansible_password: "Bosch2020!"
+  ansible_network_os: "ios"      
   hostname: "R1"
   loopback0_ip_address: "172.16.0.1"  
   bgp_asn: "3209"
