@@ -1,0 +1,5 @@
+---
+
+ansible_user: "admin"
+ansible_password: "Bosch2020!"
+ansible_network_os: "ios"
