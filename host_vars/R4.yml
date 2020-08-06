@@ -1,8 +1,8 @@
 ---
 
-  host_fqdn: r4.example.com
+  host_fqdn: P4
   host_groups:
-    - mpls
+    - BGP
   hostname: "P4"
   loopback0_ip_address: "172.16.0.1"  
   bgp_asn: "3209"

@@ -1,8 +1,9 @@
 ---
 
-  host_fqdn: r1.example.com
+  host_fqdn: R1
   host_groups:
-    - ospf
+    - PE
+  ansible_network_os: "ios"        
   hostname: "R1"
   loopback0_ip_address: "172.16.0.1"  
   bgp_asn: "3209"
