@@ -1,6 +1,6 @@
 ---
 
-  host_fqdn: R2
+  host_fqdn: 192.168.99.2
   host_groups:
     - PE
   ansible_user: "admin"
