@@ -18,8 +18,3 @@
       template: 
         src: templates/{{template}}_eigrp.j2
         dest: "{{hostname}}.test"
-
-  handlers:
-    - name: "Output Changes..."
-      debug:
-        msg: "{{ response }}"

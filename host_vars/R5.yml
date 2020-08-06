@@ -5,7 +5,7 @@
     - isis
   template: isis
   ansible_network_os: "ios"    
-  hostname: "R3"
+  hostname: "R5"
   loopback0_ip_address: "172.16.0.1"  
   bgp_asn: "3209"
   isis: "yes"
