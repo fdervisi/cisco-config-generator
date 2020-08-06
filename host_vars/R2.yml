@@ -1,5 +1,8 @@
 ---
 
+  host_fqdn: r2.example.com
+  host_groups:
+    - ospf
   hostname: "R2"
   loopback0_ip_address: "172.16.0.1"  
   bgp_asn: "3209"
