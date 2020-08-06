@@ -6,7 +6,6 @@ interface Loopback0
 !
 {% for interface in interfaces %}
 !
-interface GigabitEthernet{{ interface.interface_id }}
  ip address {{ interface }}
  no shut
 {% endfor %}
