@@ -1,6 +1,6 @@
 hostname {{ hostname }}
 !
-{% if isis %}
+{% if isis is defined and isis %}
 print isis
 {% else %}
 NOTHING 
