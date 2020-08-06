@@ -3,7 +3,8 @@
   host_fqdn: R4
   host_groups:
     - BGP
-  hostname: "R4"  
+  hostname: "R4"
+  mgmt_ip: "192.168.99.5"
   loopback0_ip_address: "172.16.0.1"  
   bgp_asn: "3209"
   isis: "yes"

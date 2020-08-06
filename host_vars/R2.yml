@@ -2,9 +2,10 @@
 
   host_fqdn: R2
   host_groups:
-    - PE       
+    - PE
   hostname: "R2"
-  loopback0_ip_address: "172.16.0.1"  
+  mgmt_ip: "192.168.99.3"
+  loopback0_ip_address: "172.16.0.1"
   bgp_asn: "3209"
   isis: "yes"
   vrfs:

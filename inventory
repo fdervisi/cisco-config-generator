@@ -12,7 +12,6 @@ for hostfilename in glob.glob('./host_vars/*.yml'):
         for hostgroup in host['host_groups']:
             if hostgroup not in groups.keys():
                 groups[ hostgroup ] = { 'hosts': [] }
-            groups[ hostgroup ]['hosts'].append( host['host_fqdn'] )
+            groups[ hostgroup ]['hosts'].append( { host['hostname'] : { "ansible_host" : host['mgmt_ip'] } } )
 
-print json.dumps(groups)
-
+print(json.dumps(groups))
