@@ -1,8 +1,8 @@
-hostname {{ data.cisco.hostname }}
+hostname {{ hostname }}
 !
-{% for vrf in data.cisco.vrfs %}
+{% for vrf in vrfs %}
 vrf definition {{ vrf.vrf }}
- rd {{ data.cisco.bgp_asn }}:{{ (data.cisco.loopback0_ip_address)[-1] }}
+ rd {{ bgp_asn }}:{{ (loopback0_ip_address)[-1] }}
  route-target both {{ vrf.route_target }}
  !
  address-family ipv4
@@ -10,10 +10,10 @@ vrf definition {{ vrf.vrf }}
 !
 {% endfor %}
 interface Loopback0
- ip address {{ data.cisco.loopback0_ip_address }} 255.255.255.255
+ ip address {{ loopback0_ip_address }} 255.255.255.255
  ip router isis
 !
-{% for interface in data.cisco.interfaces %}
+{% for interface in interfaces %}
 !
 interface GigabitEthernet{{ interface.interface_id }}
 {% if interface.vrf %}
@@ -27,28 +27,28 @@ interface GigabitEthernet{{ interface.interface_id }}
  no shut
 {% endfor %}
 !
-{% if data.cisco.isis %}
+{% if isis %}
 router isis
- net 49.0001.0000.0000.000{{ (data.cisco.loopback0_ip_address)[-1] }}.00
+ net 49.0001.0000.0000.000{{ (loopback0_ip_address)[-1] }}.00
  metric-style wide
  is-type level-2-only
 !
 {% endif %}
-router bgp {{ data.cisco.bgp_asn }}
-{% for peer in data.cisco.bgp %}
+router bgp {{ bgp_asn }}
+{% for peer in bgp %}
  bgp log-neighbor-changes
  neighbor {{ peer.neighbor }} remote-as {{ peer.remote_as }}
  !
 {% endfor %}
  !
-{% for peer in data.cisco.bgp %}
+{% for peer in bgp %}
  address-family vpnv4
   neighbor {{ peer.neighbor }} activate
   neighbor {{ peer.neighbor }} send-community extended
  exit-address-family
  !
 {% endfor %}
-{% for vrf in data.cisco.vrfs %}
+{% for vrf in vrfs %}
  address-family ipv4 vrf {{ vrf.vrf }}
   redistribute connected
 {% if vrf.neighbor %}
