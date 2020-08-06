@@ -7,7 +7,6 @@
   hostname: "R1"
   loopback0_ip_address: "172.16.0.1"  
   bgp_asn: "3209"
-  isis: True
   vrfs:
     - vrf: "sp-mpls-a"
       route_target: "1:101"
