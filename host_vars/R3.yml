@@ -2,8 +2,7 @@
 
   host_fqdn: R3
   host_groups:
-    - PE
-  ansible_network_os: "ios"    
+    - PE 
   hostname: "R3"
   loopback0_ip_address: "172.16.0.1"  
   bgp_asn: "3209"
