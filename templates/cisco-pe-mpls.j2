@@ -18,6 +18,7 @@ interface Loopback0
 interface GigabitEthernet{{ interface.interface_id }}
 {% if interface.vrf %}
  vrf forwarding {{ interface.vrf }}
+{% else %} 
 {% endif %}
 {% if interface.isis %}
  ip router isis
