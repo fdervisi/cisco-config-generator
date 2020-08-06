@@ -3,6 +3,7 @@
   host_fqdn: R3
   host_groups:
     - isis
+  template: isis
   ansible_network_os: "ios"    
   hostname: "R3"
   loopback0_ip_address: "172.16.0.1"  

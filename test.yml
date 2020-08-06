@@ -14,7 +14,7 @@
 
     - name: "Save Templates"
       template: 
-        src: templates/{{ host_groups }}_eigrp.j2
+        src: templates/{{template}}_eigrp.j2
         dest: "{{hostname}}.test"
 
     - name: "Print Files"
