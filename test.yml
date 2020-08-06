@@ -8,12 +8,6 @@
       set_fact:
         eigrp_path: "templates/cisco-pe-mpls.j2"
 
-    - name: "print template"
-      debug:
-        msg: "{{ lookup('template', eigrp_path) }}"
-      register: response
-
-
     - name: "Save Templates"
       template: 
         src: templates/cisco-pe-mpls.j2
@@ -26,12 +20,6 @@
     - name: "First Task: Identify Correct Jinja Template"
       set_fact:
         eigrp_path: "templates/cisco-lan-bgp.j2"
-
-    - name: "print template"
-      debug:
-        msg: "{{ lookup('template', eigrp_path) }}"
-      register: response
-
 
     - name: "Save Templates"
       template: 
