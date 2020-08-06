@@ -3,6 +3,7 @@
   host_fqdn: r3.example.com
   host_groups:
     - isis
+  ansible_network_os: "ios"    
   hostname: "R3"
   loopback0_ip_address: "172.16.0.1"  
   bgp_asn: "3209"
