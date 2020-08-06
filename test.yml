@@ -1,12 +1,12 @@
 ---
 
 - name: "First Play: Automate Routing Configs via Jinja2"
-  hosts: isis
+  hosts: PE
   connection: network_cli
   tasks:
     - name: "First Task: Identify Correct Jinja Template"
       set_fact:
-        eigrp_path: "templates/named_eigrp.j2"
+        eigrp_path: "templates/cisco-pe-mpls.j2"
 
     - name: "print template"
       debug:
@@ -16,5 +16,24 @@
 
     - name: "Save Templates"
       template: 
-        src: templates/{{template}}_eigrp.j2
+        src: templates/cisco-pe-mpls.j2
+        dest: "{{hostname}}.test"
+
+- name: "First Play: Automate Routing Configs via Jinja2"
+  hosts: BGP
+  connection: network_cli
+  tasks:
+    - name: "First Task: Identify Correct Jinja Template"
+      set_fact:
+        eigrp_path: "templates/cisco-lan-bgp.j2"
+
+    - name: "print template"
+      debug:
+        msg: "{{ lookup('template', eigrp_path) }}"
+      register: response
+
+
+    - name: "Save Templates"
+      template: 
+        src: templates/cisco-lan-bgp.j2
         dest: "{{hostname}}.test"
