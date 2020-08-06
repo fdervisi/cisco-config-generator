@@ -3,8 +3,6 @@
   host_fqdn: R4
   host_groups:
     - BGP
-  ansible_network_os: "ios"      
-  hostname: "R4"
   loopback0_ip_address: "172.16.0.1"  
   bgp_asn: "3209"
   isis: "yes"
