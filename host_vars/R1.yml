@@ -11,8 +11,8 @@
   vrfs:
     - vrf: "sp-mpls-a"
       route_target: "1:101"
-      # neighbor: "1.1.1.2"
-      # remote_as: "111"
+      neighbor: "1.1.1.2"
+      remote_as: "111"
   interfaces:
     - interface_id: "1"
       ip_address: "192.168.99.2 255.255.255.0"
