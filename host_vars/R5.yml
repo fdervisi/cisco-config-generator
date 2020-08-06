@@ -3,6 +3,7 @@
   host_fqdn: R5
   host_groups:
     - BGP
+  ansible_network_os: "ios"      
   hostname: "R5"
   loopback0_ip_address: "172.16.0.1"  
   bgp_asn: "3209"
