@@ -7,30 +7,7 @@ interface Loopback0
 {% for interface in interfaces %}
 !
 interface GigabitEthernet{{ interface.interface_id }}
- ip address {{ interface.ip_address }}
+ ip address {{ interface }}
  no shut
 {% endfor %}
 !
-{% if isis %}
-router isis
- net 49.0001.0000.0000.000{{ (loopback0_ip_address)[-1] }}.00
- metric-style wide
- is-type level-2-only
-!
-{% endif %}
-router bgp {{ bgp_asn }}
-{% for peer in bgp %}
- bgp log-neighbor-changes
- neighbor {{ peer.neighbor }} remote-as {{ peer.remote_as }}
- !
-{% endfor %}
- !
-{% for peer in bgp %}
- address-family vpnv4
-  neighbor {{ peer.neighbor }} activate
-  neighbor {{ peer.neighbor }} send-community extended
- exit-address-family
- !
-{% endfor %}
-!
-route-map Allow permit 10
