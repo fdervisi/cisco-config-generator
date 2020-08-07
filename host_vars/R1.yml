@@ -2,7 +2,7 @@
 
   host_fqdn: R1
   host_groups:
-    - PE
+    - all
   hostname: "R1"
   mgmt_ip: "192.168.99.2"
   loopback0_ip_address: "172.16.0.1"  
