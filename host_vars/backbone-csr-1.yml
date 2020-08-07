@@ -1,0 +1,32 @@
+---
+cisco:
+  hostname: "backbone-csr-1"
+  mgmt_ip: 192.168.99.6
+  loopback0_ip_address: "172.16.0.5"
+  bgp_asn: "420700000"
+  isis: "yes"
+  vrfs:
+    - vrf: "backbone"
+      route_target: "1:100"
+      neighbor: "10.116.207.5"
+      remote_as: "420700099"
+    - vrf: "backbone"
+      route_target: "1:100"
+      neighbor: "10.116.207.7"
+      remote_as: "420700099"
+  interfaces:
+    - interface_id: "1"
+      ip_address: "192.168.99.6 255.255.255.0"
+    - interface_id: "2"
+      ip_address: "172.16.253.1 255.255.255.0"
+      isis: "yes"
+    - interface_id: "3"
+      ip_address: "10.116.207.4 255.255.255.254"
+      vrf: "backbone"
+    - interface_id: "4"
+      ip_address: "10.116.207.6 255.255.255.254"
+      vrf: "backbone"
+  bgp:
+    - neighbor: "172.16.0.6"
+      remote_as: "420700000"
+      update_source_loopback: "yes"
