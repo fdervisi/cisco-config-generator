@@ -16,5 +16,5 @@ PE:
       ansible_host: 192.168.99.5                  
 BGP:
   hosts:
-    hub-a-sdw-a-csr-1:
+    hub-a-sdw-a-csr-2:
       ansible_host: 192.168.99.8
