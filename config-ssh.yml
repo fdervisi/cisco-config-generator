@@ -5,8 +5,8 @@
   gather_facts: False
   tasks:
     - telnet:
-        user: cisco
-        password: cisco
+        user: admin
+        password: Bosch2020!
         login_prompt: "Username: "
         prompts:
           - "[>|#]"
@@ -16,7 +16,6 @@
           - ip domain name lab.local
           - crypto key generate rsa modulus 768
           - ip ssh version 2
-          - username admin privilege 15 secret Bosch2020!
           - no username cisco
           - line vty 0 10
           - login local
