@@ -7,11 +7,11 @@
   isis: "yes"
   vrfs:
     - vrf: "backbone"
-      route_target: "1:100"
+      route_target: "1:200"
       neighbor: "10.116.207.5"
       remote_as: "420700099"
     - vrf: "backbone"
-      route_target: "1:100"
+      route_target: "1:200"
       neighbor: "10.116.207.7"
       remote_as: "420700099"
   interfaces:
