@@ -6,13 +6,13 @@ PE:
       ansible_host: 192.168.99.6
     backbone-csr-2:
       ansible_host: 192.168.99.7
-    pls-a-csr-ce-1:
+    mpls-a-csr-ce-1:
       ansible_host: 192.168.99.2
-    pls-a-csr-ce-2:
+    mpls-a-csr-ce-2:
       ansible_host: 192.168.99.3
-    pls-b-csr-ce-1:
+    mpls-b-csr-ce-1:
       ansible_host: 192.168.99.4
-    pls-b-csr-ce-2:
+    mpls-b-csr-ce-2:
       ansible_host: 192.168.99.5                  
 BGP:
   hosts:
