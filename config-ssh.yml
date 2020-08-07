@@ -17,7 +17,7 @@
           - crypto key generate rsa modulus 768
           - ip ssh version 2
           - username admin privilege 15 secret Bosch2020!
-          - username cisco
+          - no username cisco
           - line vty 0 10
           - login local
           - transport input telnet ssh
