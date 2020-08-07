@@ -15,7 +15,7 @@
         dest: "{{hostname}}.test"
 
     - name: "Print Files"
-      shell: echo "{{hostname}}.test"
+      shell: cat "{{hostname}}.test"
       register: output
     - debug: msg="{{ output.stdout }}"  
 
