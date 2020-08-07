@@ -1,12 +1,15 @@
 ---
 
 - name: run show commands
-  telnet:
-    user: cisco
-    password: cisco
-    login_prompt: "Username: "
-    prompts:
-      - "[>#]"
-    command:
-      - terminal length 0
-      - show version
+  hosts: BGP
+  gather_facts: False
+  tasks:
+    - telnet:
+        user: cisco
+        password: cisco
+        login_prompt: "Username: "
+        prompts:
+          - "[>|#]"
+        command:
+          - terminal length 0
+          - show version
