@@ -12,7 +12,7 @@
     - name: "Save Templates"
       template: 
         src: templates/cisco-pe-mpls.j2
-        dest: "/devices/{{hostname}}.cfg"
+        dest: "devices/{{hostname}}.cfg"
 
     - name: "Print Files"
       shell: cat "{{hostname}}.test"
