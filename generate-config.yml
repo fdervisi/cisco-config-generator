@@ -8,12 +8,16 @@
       set_fact:
         eigrp_path: "templates/cisco-pe-mpls.j2"
       register: output
-    - debug: msg="{{output.stdout}}"
 
     - name: "Save Templates"
       template: 
         src: templates/cisco-pe-mpls.j2
         dest: "{{hostname}}.test"
+
+    - name: "Print Files"
+      shell: echo "{{hostname}}.test"
+      register: output
+    - debug: msg="{{ output.stdout }}"  
 
 - name: "First Play: Automate Routing Configs via Jinja2"
   hosts: BGP
