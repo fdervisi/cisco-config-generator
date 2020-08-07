@@ -11,4 +11,14 @@
         prompts:
           - "[>|#]"
         command:
+          - conf t
+          - hostname prestage
+          - ip domain name lab.local
+          - crypto key generate rsa modulus 768
+          - ip ssh version 2
+          - username admin privilege 15 secret Bosch2020!
+          - line vty 0 10
+          - login local
+          - transport input telnet ssh
+          - end
           - exit
