@@ -17,7 +17,7 @@
     - name: "Print Files"
       shell: cat "{{hostname}}.test"
       register: output
-    - debug: msg="{{ output.stdout_lines }}"  
+    - debug: msg="{{ output.stdout_lines }}" 
 
 - name: "First Play: Automate Routing Configs via Jinja2"
   hosts: BGP
