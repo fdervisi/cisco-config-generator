@@ -7,6 +7,8 @@
     - name: "First Task: Identify Correct Jinja Template"
       set_fact:
         eigrp_path: "templates/cisco-pe-mpls.j2"
+        register: output
+    - debug: msg="{{output.stdout}}"
 
     - name: "Save Templates"
       template: 
@@ -24,6 +26,4 @@
     - name: "Save Templates"
       template: 
         src: templates/cisco-lan-bgp.j2
-        dest: "{{hostname}}.test"
-    - name: "Print" 
-      debug: msg={"{{hostname}}.test"}
+        dest: "{{hostname}}.test" 
