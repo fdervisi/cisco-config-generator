@@ -8,7 +8,7 @@
       set_fact:
         eigrp_path: "templates/cisco-pe-mpls.j2"
       register: output
-    - debug: msg="{{output.stdout}}"
+    - debug: msg="{{output}}"
 
     - name: "Save Templates"
       template: 
