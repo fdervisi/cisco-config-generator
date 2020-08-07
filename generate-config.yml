@@ -11,7 +11,7 @@
     - name: "Save Templates"
       template: 
         src: templates/cisco-pe-mpls.j2
-        dest: "{{hostname}}.test"
+        debug: "{{hostname}}.test"
 
 - name: "First Play: Automate Routing Configs via Jinja2"
   hosts: BGP
