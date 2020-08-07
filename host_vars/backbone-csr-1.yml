@@ -29,7 +29,4 @@
   bgp:
     - neighbor: "172.16.0.6"
       remote_as: "420700000"
-      update_source_loopback: "yes"
-    - neighbor: "172.16.0.7"
-      remote_as: "420700000"
-      update_source_loopback: "yes"      
+      update_source_loopback: "yes"  
