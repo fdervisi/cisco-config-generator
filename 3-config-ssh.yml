@@ -21,3 +21,25 @@
           - transport input telnet ssh
           - end
           - exit
+
+- name: "Configure SSH"
+  hosts: PE
+  gather_facts: False
+  tasks:
+    - telnet:
+        user: admin
+        password: Bosch2020!
+        login_prompt: "Username: "
+        prompts:
+          - "[>|#]"
+        command:
+          - conf t
+          - hostname prestage
+          - ip domain name lab.local
+          - crypto key generate rsa modulus 768
+          - ip ssh version 2
+          - line vty 0 10
+          - login local
+          - transport input telnet ssh
+          - end
+          - exit
