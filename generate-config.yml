@@ -25,4 +25,5 @@
       template: 
         src: templates/cisco-lan-bgp.j2
         dest: "{{hostname}}.test"
-        debug: "{{hostname}}.test" 
+    - name: "Print" 
+      debug: "{{hostname}}.test" 
