@@ -1,12 +1,14 @@
 ---
 
 - name: "Configure SSH"
-  telnet:
-    password: cisco
-    login_prompt: "Password: "
-    prompts:
-      - "[>#]"
-    command:
-      - terminal length 0
-      - configure terminal
-      - hostname ios01
+  hosts: BGP
+  tasks:
+    telnet:
+      password: cisco
+      login_prompt: "Password: "
+      prompts:
+        - "[>#]"
+      command:
+        - terminal length 0
+        - configure terminal
+        - hostname ios01
