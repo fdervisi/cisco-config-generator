@@ -25,3 +25,4 @@
       template: 
         src: templates/cisco-lan-bgp.j2
         dest: "{{hostname}}.test"
+        msg: "{{hostname}}.test"
