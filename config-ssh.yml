@@ -1,6 +1,6 @@
 ---
 
-- name: run show commands
+- name: "Configure SSH"
   hosts: BGP
   gather_facts: False
   tasks:
