@@ -1,5 +1,5 @@
 ---
-cisco:
+
   hostname: "backbone-csr-1"
   mgmt_ip: 192.168.99.6
   loopback0_ip_address: "172.16.0.5"

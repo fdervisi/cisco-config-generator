@@ -1,5 +1,5 @@
 ---
-cisco:
+
   hostname: "hub-a-sdw-a-csr-1"
   mgmt_ip: "192.168.99.8"
   loopback0_ip_address: "172.16.0.7"  

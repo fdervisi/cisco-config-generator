@@ -1,5 +1,5 @@
 ---
-cisco:
+
   hostname: "mpls-a-csr-ce-2"
   mgmt_ip: "192.168.99.3"
   loopback0_ip_address: "172.16.0.2"
