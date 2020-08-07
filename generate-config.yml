@@ -31,3 +31,8 @@
       template: 
         src: templates/cisco-lan-bgp.j2
         dest: "{{hostname}}.test" 
+        
+    - name: "Print Files"
+      shell: cat "{{hostname}}.test"
+      register: output
+    - debug: msg="{{ output.stdout_lines }}"         
