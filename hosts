@@ -1,5 +1,12 @@
 ---
 
-PE:
-  hosts:
-    backbone-csr-1:
+all:
+  children:
+    routers:
+      children:
+        pe:
+          hosts:
+            backbone-csr-1:
+        bgp:
+          hosts:
+            hub-a-sdw-a-csr-1:

@@ -1,0 +1,30 @@
+---
+
+  hostname: "hub-a-sdw-a-csr-1"
+  ansible_host: 192.168.99.8
+  host_groups: "bgp"
+  loopback0_ip_address: "172.16.0.7"
+  
+  vm_interfaces: 
+    - name: Management
+    - name: BigSwitch
+    - name: BigSwitch
+    - name: BigSwitch
+
+  bgp_asn: "4290704900"
+  interfaces:
+    - interface_id: "1"
+      ip_address: "192.168.99.8 255.255.255.0"
+    - interface_id: "2"
+      ip_address: "10.116.207.11 255.255.255.254"
+    - interface_id: "3"
+      ip_address: "10.116.207.5 255.255.255.254"
+    - interface_id: "4"
+      ip_address: "10.116.210.2 255.255.255.0"
+    - interface_id: "5"
+      ip_address: "10.116.207.8 255.255.255.254"
+  bgp:
+    - neighbor: "10.116.207.11"
+      remote_as: "4290706502"
+    - neighbor: "10.116.207.5"
+      remote_as: "4290700000"
