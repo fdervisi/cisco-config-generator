@@ -5,7 +5,7 @@
   tasks:
   - name: Clone the template
     vmware_guest:
-      hostname: "ip130.ip-51-195-64."
+      hostname: "ip130.ip-51-195-64.eu"
       username: "Administrator@dervisi.net"
       password: "Silver3535!"
       validate_certs: False
