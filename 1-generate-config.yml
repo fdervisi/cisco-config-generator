@@ -15,7 +15,7 @@
         dest: "devices/{{hostname}}.cfg"
 
     - name: "Print Files"
-      shell: cat "devices/{{hostname}}.test"
+      shell: cat "devices/{{hostname}}.cfg"
       register: output
     - debug: msg="{{ output.stdout_lines }}" 
 
@@ -31,9 +31,9 @@
     - name: "Save Templates"
       template: 
         src: templates/cisco-lan-bgp.j2
-        dest: "devices/{{hostname}}.test"
+        dest: "devices/{{hostname}}.cfg"
         
     - name: "Print Files"
-      shell: cat "devices/{{hostname}}.test"
+      shell: cat "devices/{{hostname}}.cfg"
       register: output
     - debug: msg="{{ output.stdout_lines }}"    
