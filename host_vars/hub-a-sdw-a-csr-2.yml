@@ -2,6 +2,7 @@
 
   hostname: "hub-a-sdw-a-csr-2"
   ansible_host: "192.168.99.9"
+  host_groups: "BGP"
   loopback0_ip_address: "172.16.0.7"  
   bgp_asn: "4290704900"
   interfaces:

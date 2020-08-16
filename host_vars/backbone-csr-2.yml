@@ -3,6 +3,7 @@
   hostname: "backbone-csr-2"
   ansible_host: 192.168.99.7
   loopback0_ip_address: "172.16.0.6"
+  host_groups: "PE"
   bgp_asn: "420700000"
   isis: "yes"
   vrfs:
