@@ -15,7 +15,7 @@
         dest: "devices/{{hostname}}.cfg"
 
     - name: "Print Files"
-      shell: cat "{{hostname}}.test"
+      shell: cat "devices/{{hostname}}.test"
       register: output
     - debug: msg="{{ output.stdout_lines }}" 
 
@@ -33,6 +33,6 @@
         dest: "devices/{{hostname}}.test" 
         
     - name: "Print Files"
-      shell: cat "{{hostname}}.test"
+      shell: cat "devices/{{hostname}}.test"
       register: output
     - debug: msg="{{ output.stdout_lines }}"         
