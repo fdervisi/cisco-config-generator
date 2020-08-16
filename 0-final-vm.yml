@@ -23,7 +23,7 @@
         num_cpus: '{{ guest_vcpu }}'
       networks:
         - name: '{{ item }}'
-      loop: '{{ interfaces }}'
+          loop: '{{ interfaces }}'
       template: '{{ guest_template }}'
       wait_for_ip_address: false
     delegate_to: localhost
