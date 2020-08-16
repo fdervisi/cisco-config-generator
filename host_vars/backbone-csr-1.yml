@@ -7,6 +7,8 @@
   port_group: 
     - name: Management
     - name: BigSwitch
+    - name: BigSwitch
+    - name: BigSwitch
   bgp_asn: "420700000"
   isis: "yes"
   vrfs:
