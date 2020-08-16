@@ -5,10 +5,10 @@
   host_groups: "PE"
   loopback0_ip_address: "172.16.0.5"
   port_group: 
-    - 'Management'
-    - 'BigSwitch'
-    - 'BigSwitch'
-    - 'BigSwitch'
+    - Management
+    - BigSwitch
+    - BigSwitch
+    - BigSwitch
 
   bgp_asn: "420700000"
   isis: "yes"
