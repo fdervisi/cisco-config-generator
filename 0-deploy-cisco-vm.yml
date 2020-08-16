@@ -7,7 +7,7 @@
     vmware_guest:
       hostname: "ip130.ip-51-195-64.eu"
       username: "Administrator@dervisi.net"
-      password: "Silver3535!"
+      password: "Silver3535"
       validate_certs: False
       name: CSR1000v_FirstTest
       template: CSR1000v_Template
