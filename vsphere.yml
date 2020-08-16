@@ -2,7 +2,7 @@
 
 vsphere_host: 'ip130.ip-51-195-64.eu'
 vsphere_user: 'Administrator@dervisi.net'
-vsphere_password: 'ilver3535!'
+vsphere_password: 'Silver3535!'
 vsphere_datacenter: 'OVH'
 
 guest_memory: '4096'
