@@ -21,8 +21,7 @@
       hardware:
         memory_mb: '{{ guest_memory }}'
         num_cpus: '{{ guest_vcpu }}'
-      networks:
-        - name: '{{ port_group }}'
+      networks: '{{ port_group }}'
       template: '{{ guest_template }}'
       wait_for_ip_address: false
     delegate_to: localhost
