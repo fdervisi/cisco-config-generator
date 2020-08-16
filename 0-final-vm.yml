@@ -75,14 +75,14 @@
           value: interface GigabitEthernet1
         - id: com.cisco.csr1000v.ios-config-0006.1
           type: string
-          value: 'ip address {{ ansible_host }} 255.255.255.0 '
-        - id: com.cisco.csr1000v.ios-config-007.1
+          value: 'ip address {{ ansible_host }} 255.255.255.0'
+        - id: com.cisco.csr1000v.ios-config-0007.1
           type: string
-          value: no shutdown
-        - id: com.cisco.csr1000v.ios-config-008.1
+          value: "no shutdown"
+        - id: com.cisco.csr1000v.ios-config-0008.1
           type: string
           value: ' {{ router_gateway }}'
-        - id: com.cisco.csr1000v.ios-config-009.1
+        - id: com.cisco.csr1000v.ios-config-0009.1
           type: string
           value: restconf
         - id: com.cisco.csr1000v.ios-config-0010.1
