@@ -12,6 +12,6 @@
       name: CSR1000v_FirstTest
       template: CSR1000v_Template
       datacenter: OVH
-      folder: /Datastore
+      folder: /datastore
       state: poweredon
       wait_for_ip_address: yes
