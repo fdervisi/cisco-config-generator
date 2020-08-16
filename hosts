@@ -3,12 +3,3 @@
 PE:
   hosts:
     backbone-csr-1:
-    backbone-csr-2:
-    mpls-a-csr-ce-1:
-    mpls-a-csr-ce-2:
-    mpls-b-csr-ce-1:
-    mpls-b-csr-ce-2:               
-BGP:
-  hosts:
-    hub-a-sdw-a-csr-1:
-    hub-a-sdw-a-csr-2:
