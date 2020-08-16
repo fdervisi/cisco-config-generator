@@ -11,7 +11,7 @@
       validate_certs: False
       name: CSR1000v_FirstTest
       template: CSR1000v_Template
-      datacenter: "OVA"
+      datacenter: OVA
       folder: /OVA/Datastore
       state: poweredon
       wait_for_ip_address: yes
