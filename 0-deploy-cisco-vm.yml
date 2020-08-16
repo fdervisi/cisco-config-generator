@@ -13,5 +13,69 @@
       template: CSR1000v_Template
       datacenter: OVH
       folder: /OVH/vm
-      state: poweredon
-      wait_for_ip_address: yes
+      wait_for_ip_address: false
+
+  - name: Update vApp Properties
+    vmware_guest:
+      hostname: "ip130.ip-51-195-64.eu"
+      username: "Administrator@dervisi.net"
+      password: "Silver3535!"
+      name: CSR1000v_FirstTest
+      state: present
+      validate_certs: false
+      vapp_properties:
+        - id: com.cisco.csr1000v.hostname.1
+          type: string
+          value: 'First Test'
+        - id: com.cisco.csr1000v.domain-name.1
+          type: string
+          value: lab.local
+        - id: com.cisco.csr1000v.login-username.1
+          type: string
+          value: cisco
+        - id: com.cisco.csr1000v.login-password.1
+          type: password
+          value: cisco
+        - id: com.cisco.csr1000v.privilege-password.1
+          type: password
+          value: cisco
+        - id: com.cisco.csr1000v.license.1
+          type: string
+          value: ax
+        - id: com.cisco.csr1000v.ios-config-0001.1
+          type: string
+          value: line vty 0 4
+        - id: com.cisco.csr1000v.ios-config-0002.1
+          type: string
+          value: login local
+        - id: com.cisco.csr1000v.ios-config-0003.1
+          type: string
+          value: transport input ssh
+        - id: com.cisco.csr1000v.ios-config-0004.1
+          type: string
+          value: crypto key generate rsa modulus 4096
+        - id: com.cisco.csr1000v.ios-config-0005.1
+          type: string
+          value: vrf definition mgmt-intf
+        - id: com.cisco.csr1000v.ios-config-0006.1
+          type: string
+          value: address-family ipv4
+        - id: com.cisco.csr1000v.ios-config-0007.1
+          type: string
+          value: interface GigabitEthernet1
+        - id: com.cisco.csr1000v.ios-config-0009.1
+          type: string
+          value: '192.168.99.135 255.255.255.0'
+        - id: com.cisco.csr1000v.ios-config-0010.1
+          type: string
+          value: no shutdown
+        - id: com.cisco.csr1000v.ios-config-0011.1
+          type: string
+          value: restconf
+        - id: com.cisco.csr1000v.ios-config-0012.1
+          type: string
+          value: netconf ssh
+        - id: com.cisco.csr1000v.ios-config-0013.1
+          type: string
+          value: netconf-yang
+    delegate_to: localhost  
