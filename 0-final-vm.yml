@@ -22,9 +22,8 @@
         memory_mb: '{{ guest_memory }}'
         num_cpus: '{{ guest_vcpu }}'
       networks:
-        - name: '{{ interface.port_group1 }}'
-        - name: '{{ interface.port_group2 }}'
-        - name: '{{ interface.port_group3 }}'
+        - name: '{{ item }}'
+      loop: '{{ interfaces }}'
       template: '{{ guest_template }}'
       wait_for_ip_address: false
     delegate_to: localhost
