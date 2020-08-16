@@ -6,7 +6,10 @@
   loopback0_ip_address: "172.16.0.5"
   bgp_asn: "420700000"
   isis: "yes"
-  port_group1: 'Management'  
+  port_group1: 'Management'
+  port_group2: 'BigSwitch'
+  port_group3: 'BigSwitch'
+  port_group4: 'BigSwitch'
   vrfs:
     - vrf: "backbone"
       route_target: "1:200"
