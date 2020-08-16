@@ -1,0 +1,17 @@
+---
+- name: Create a VM from a template
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: Clone the template
+    vmware_guest:
+      hostname: "ip130.ip-51-195-64.eu"
+      username: "Administrator@dervisi.net"
+      password: "Silver3535!"
+      validate_certs: False
+      name: CSR1000v_FirstTest
+      template: CSR1000v_Template
+      datacenter: "OVA"
+      folder: /OVA/Datastore
+      state: poweredon
+      wait_for_ip_address: yes
