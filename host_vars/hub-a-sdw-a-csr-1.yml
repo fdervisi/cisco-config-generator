@@ -10,6 +10,7 @@
     - name: BigSwitch
     - name: BigSwitch
     - name: BigSwitch
+    - name: BigSwitch
 
   bgp_asn: "4290704900"
   interfaces:
