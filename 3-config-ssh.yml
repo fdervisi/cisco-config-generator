@@ -1,7 +1,7 @@
 ---
 
 - name: "Configure SSH"
-  hosts: BGP
+  hosts: bgp
   gather_facts: False
   tasks:
     - telnet:
@@ -23,7 +23,7 @@
           - exit
 
 - name: "Configure SSH"
-  hosts: PE
+  hosts: pe
   gather_facts: False
   tasks:
     - telnet:
