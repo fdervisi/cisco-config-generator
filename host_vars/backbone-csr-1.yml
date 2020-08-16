@@ -9,10 +9,8 @@
     - BigSwitch
     - BigSwitch
     - BigSwitch
-
   bgp_asn: "420700000"
   isis: "yes"
-
   vrfs:
     - vrf: "backbone"
       route_target: "1:200"
