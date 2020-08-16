@@ -1,7 +1,7 @@
 ---
 
   hostname: "hub-a-sdw-a-csr-1"
-  mgmt_ip: "192.168.99.8"
+  ansible_host: "192.168.99.8"
   loopback0_ip_address: "172.16.0.7"  
   bgp_asn: "4290704900"
   interfaces:

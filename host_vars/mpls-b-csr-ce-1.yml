@@ -1,7 +1,7 @@
 ---
 
   hostname: "mpls-b-csr-ce-1"
-  mgmt_ip: "192.168.99.4"
+  ansible_host: "192.168.99.4"
   loopback0_ip_address: "172.16.0.3"
   bgp_asn: "3209"
   isis: "yes"
