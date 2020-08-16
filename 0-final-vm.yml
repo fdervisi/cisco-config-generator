@@ -2,6 +2,8 @@
 - name: Create a VM from a template
   hosts: all
   gather_facts: no
+  vars_files:
+    - vsphere.yml  
   tasks:
   - name: Deploy VM from template
     vmware_guest:
