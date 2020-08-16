@@ -17,17 +17,21 @@
       remote_as: "420700099"
   interfaces:
     - interface_id: "1"
+      port_group1: 'Management'
       ip_address: "192.168.99.6 255.255.255.0"
     - interface_id: "2"
+      port_group2: 'BigSwitch'
       ip_address: "172.16.253.1 255.255.255.0"
       isis: "yes"
     - interface_id: "3"
+      port_group3: 'BigSwitch'
       ip_address: "10.116.207.4 255.255.255.254"
       vrf: "backbone"
     - interface_id: "4"
+      port_group4: 'BigSwitch'
       ip_address: "10.116.207.6 255.255.255.254"
       vrf: "backbone"
   bgp:
     - neighbor: "172.16.0.6"
       remote_as: "420700000"
-      update_source_loopback: "yes"  
+      update_source_loopback: "yes"

@@ -1,0 +1,104 @@
+---
+- name: Create a VM from a template
+  hosts: all
+  gather_facts: no
+  tasks:
+  - name: Deploy VM from template
+    vmware_guest:
+      hostname: '{{ vsphere_host }}'
+      username: '{{ vsphere_user }}'
+      password: '{{ vsphere_password }}'
+      validate_certs: false
+      datacenter: 'OVH'
+      folder: '/OVH/vm'
+      name: '{{ hostname }}'
+      disk:
+        - size_gb: '{{ guest_disk }}'
+          type: thin
+          datastore: 'Datastore'
+      hardware:
+        memory_mb: '{{ guest_memory }}'
+        num_cpus: '{{ guest_vcpu }}'
+      networks:
+        - name: '{{ port_group1 }}'
+        - name: '{{ port_group2 }}'
+        - name: '{{ port_group3 }}'
+      template: '{{ guest_template }}'
+      wait_for_ip_address: false
+    delegate_to: localhost
+
+  # Bootstrap CSR1000v using vApp properties
+  - name: Update vApp Properties
+    vmware_guest:
+      hostname: '{{ vsphere_host }}'
+      username: '{{ vsphere_user }}'
+      password: '{{ vsphere_password }}'
+      name: '{{ inventory_hostname }}'
+      state: present
+      validate_certs: false
+      vapp_properties:
+        - id: com.cisco.csr1000v.hostname.1
+          type: string
+          value: '{{ hostname }}'
+        - id: com.cisco.csr1000v.domain-name.1
+          type: string
+          value: lab.local
+        - id: com.cisco.csr1000v.login-username.1
+          type: string
+          value: admin
+        - id: com.cisco.csr1000v.login-password.1
+          type: password
+          value: Bosch2020!
+        - id: com.cisco.csr1000v.privilege-password.1
+          type: password
+          value: Bosch2020!
+        - id: com.cisco.csr1000v.license.1
+          type: string
+          value: ax
+        - id: com.cisco.csr1000v.ios-config-0001.1
+          type: string
+          value: line vty 0 4
+        - id: com.cisco.csr1000v.ios-config-0002.1
+          type: string
+          value: login local
+        - id: com.cisco.csr1000v.ios-config-0003.1
+          type: string
+          value: transport input telnet ssh
+        - id: com.cisco.csr1000v.ios-config-0004.1
+          type: string
+          value: crypto key generate rsa modulus 4096
+        - id: com.cisco.csr1000v.ios-config-0005.1
+          type: string
+          value: interface GigabitEthernet1
+        - id: com.cisco.csr1000v.ios-config-0006.1
+          type: string
+          value: 'ip address {{ ansible_host }} 255.255.255.0 '
+        - id: com.cisco.csr1000v.ios-config-007.1
+          type: string
+          value: no shutdown
+        - id: com.cisco.csr1000v.ios-config-008.1
+          type: string
+          value: ' {{ router_gateway }}'
+        - id: com.cisco.csr1000v.ios-config-009.1
+          type: string
+          value: restconf
+        - id: com.cisco.csr1000v.ios-config-0010.1
+          type: string
+          value: netconf ssh
+        - id: com.cisco.csr1000v.ios-config-0011.1
+          type: string
+          value: netconf-yang
+    delegate_to: localhost
+
+  # Power on CSR1000v
+  - name: Set the state of a virtual machine to poweron
+    vmware_guest_powerstate:
+      hostname: "{{ vsphere_host }}"
+      username: "{{ vsphere_user }}"
+      password: "{{ vsphere_password }}"
+      validate_certs: false
+      folder: "/OVH/vm"
+      name: "{{ hostname }}"
+      state: powered-on
+    delegate_to: localhost
+    register: deploy
