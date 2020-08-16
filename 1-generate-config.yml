@@ -30,7 +30,7 @@
     - name: "Save Templates"
       template: 
         src: templates/cisco-lan-bgp.j2
-        dest: "{{hostname}}.test" 
+        dest: "devices/{{hostname}}.test" 
         
     - name: "Print Files"
       shell: cat "{{hostname}}.test"
