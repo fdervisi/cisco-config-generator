@@ -23,8 +23,14 @@
         num_cpus: '{{ guest_vcpu }}'
       networks:
 <<<<<<< HEAD
+<<<<<<< HEAD
         - name: '{{ item }}'
         loop: '{{ interfaces }}'
+=======
+        - name: '{{ port_group1 }}'
+        - name: '{{ port_group2 }}'
+        - name: '{{ port_group3 }}'
+>>>>>>> parent of 52fab20... Update 0-final-vm.yml
 =======
         - name: '{{ port_group1 }}'
         - name: '{{ port_group2 }}'
