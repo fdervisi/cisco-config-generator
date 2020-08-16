@@ -26,13 +26,14 @@
     - name: "First Task: Identify Correct Jinja Template"
       set_fact:
         eigrp_path: "templates/cisco-lan-bgp.j2"
+      register: output
 
     - name: "Save Templates"
       template: 
         src: templates/cisco-lan-bgp.j2
-        dest: "devices/{{hostname}}.test" 
+        dest: "devices/{{hostname}}.test"
         
     - name: "Print Files"
       shell: cat "devices/{{hostname}}.test"
       register: output
-    - debug: msg="{{ output.stdout_lines }}"         
+    - debug: msg="{{ output.stdout_lines }}"    
