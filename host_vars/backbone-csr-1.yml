@@ -26,10 +26,8 @@
       isis: "yes"
     - interface_id: "3"
       name: BigSwitch
-      vrf: "backbone"
     - interface_id: "4"
       name: BigSwitch
-      vrf: "backbone"
   bgp:
     - neighbor: "172.16.0.6"
       remote_as: "420700000"
