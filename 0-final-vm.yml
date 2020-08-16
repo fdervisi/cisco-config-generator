@@ -21,11 +21,7 @@
       hardware:
         memory_mb: '{{ guest_memory }}'
         num_cpus: '{{ guest_vcpu }}'
-      networks:
-        - name: '{{ port_group1 }}'
-        - name: '{{ port_group2 }}'
-        - name: '{{ port_group3 }}'
-        - name: '{{ port_group4 }}'
+      networks: '{{ vm_interfaces }}'
       template: '{{ guest_template }}'
       wait_for_ip_address: false
     delegate_to: localhost
