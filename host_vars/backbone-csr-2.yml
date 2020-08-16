@@ -1,0 +1,41 @@
+---
+
+  hostname: "backbone-csr-2"
+  ansible_host: 192.168.99.7
+  host_groups: 
+    - pe  
+  loopback0_ip_address: "172.16.0.6"
+  
+  vm_interfaces: 
+    - name: Management
+    - name: BigSwitch
+    - name: BigSwitch
+    - name: BigSwitch
+
+  bgp_asn: "420700000"
+  isis: "yes"
+  vrfs:
+    - vrf: "backbone"
+      route_target: "1:100"
+      neighbor: "10.116.207.131"
+      remote_as: "420706500"
+    - vrf: "backbone"
+      route_target: "1:100"
+      neighbor: "10.116.207.133"
+      remote_as: "420706500"
+  interfaces:
+    - interface_id: "1"
+      ip_address: "192.168.99.7 255.255.255.0"
+    - interface_id: "2"
+      ip_address: "172.16.253.2 255.255.255.0"
+      isis: "yes"
+    - interface_id: "3"
+      ip_address: "10.116.207.130 255.255.255.254"
+      vrf: "backbone"
+    - interface_id: "4"
+      ip_address: "10.116.207.132 255.255.255.254"
+      vrf: "backbone"
+  bgp:
+    - neighbor: "172.16.0.5"
+      remote_as: "420700000"
+      update_source_loopback: "yes"
