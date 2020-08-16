@@ -25,7 +25,7 @@ interface GigabitEthernet{{ interface.interface_id }}
  mpls ip
 {% else %}  
 {% endif %}
- ip address {{ interface.ip_address }}
+ ip address {{ interface.int_ip_address }}
  no shut
 {% endfor %}
 !

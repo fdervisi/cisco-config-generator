@@ -6,7 +6,7 @@ interface Loopback0
 {% for interface in interfaces %}
 !
 interface GigabitEthernet{{ interface.interface_id }}
- ip address {{ interface.ip_address }}
+ ip address {{ interface.int_ip_address }}
  no shut
 {% endfor %}
 !
