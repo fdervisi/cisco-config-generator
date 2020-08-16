@@ -22,7 +22,7 @@
         memory_mb: '{{ guest_memory }}'
         num_cpus: '{{ guest_vcpu }}'
       networks:
-        - name: '{{ item }}'
+        name: '{{ item }}'
       loop:
         - "Management"
         - "BigSwitch"
