@@ -23,11 +23,12 @@
         num_cpus: '{{ guest_vcpu }}'
       networks:
         - name: '{{ item }}'
+      template: '{{ guest_template }}'
+      wait_for_ip_address: false
+    delegate_to: localhost
+
   loop:
     - "Management"
     - "BigSwitch"
     - "BigSwitch"
-    - "BigSwitch"
-      template: '{{ guest_template }}'
-      wait_for_ip_address: false
-    delegate_to: localhost
+    - "BigSwitch"    
