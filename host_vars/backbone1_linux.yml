@@ -1,6 +1,6 @@
 ---
 
-  hostname: "backbone_linux"
+  hostname: "backbone1_linux"
   ansible_host: 192.168.99.35
   server_template: CentOS7_Template    
   host_groups:
@@ -12,8 +12,8 @@
       netmask: 255.255.255.0
       gateway: 192.168.1.1
     - name: BigSwitch
-      ip: 172.16.253.10
-      netmask: 255.255.255.0
-      gateway: 172.16.253.1
+      ip: 10.116.207.5
+      netmask: 255.255.255.254
+      gateway: 10.116.207.4
       dns_servers:
       - 8.8.8.8

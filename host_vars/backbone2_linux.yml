@@ -1,6 +1,6 @@
 ---
 
-  hostname: "hub-a-linux"
+  hostname: "backbone2_linux"
   ansible_host: 192.168.99.36
   server_template: CentOS7_Template    
   host_groups:
@@ -8,12 +8,12 @@
   
   vm_interfaces: 
     - name: Management
-      ip: 192.168.99.36
+      ip: 192.168.99.35
       netmask: 255.255.255.0
       gateway: 192.168.1.1
     - name: BigSwitch
-      ip: 10.116.210.1
-      netmask: 255.255.255.0
-      gateway: 10.116.210.2
+      ip: 10.116.207.131
+      netmask: 255.255.255.254
+      gateway: 10.116.207.130
       dns_servers:
       - 8.8.8.8
