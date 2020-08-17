@@ -41,6 +41,7 @@ router bgp {{ bgp_asn }}
 {% for peer in bgp %}
  bgp log-neighbor-changes
  neighbor {{ peer.neighbor }} remote-as {{ peer.remote_as }}
+ neighbor {{ peer.neighbor }} update-source loopback 0
  !
 {% endfor %}
  !
@@ -48,7 +49,6 @@ router bgp {{ bgp_asn }}
  address-family vpnv4
   neighbor {{ peer.neighbor }} activate
   neighbor {{ peer.neighbor }} send-community extended
-  neighbor {{ peer.neighbor }} update-source loopback 0
  exit-address-family
  !
 {% endfor %}
