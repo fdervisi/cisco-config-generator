@@ -15,7 +15,7 @@
       folder: '/OVH/vm'
       name: '{{ hostname }}'
       networks: '{{ vm_interfaces }}'
-      template: '{{ sd-wan_template }}'
+      template: 'ECV_Test'
       wait_for_ip_address: false
     delegate_to: localhost
 
