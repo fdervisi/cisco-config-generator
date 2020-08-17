@@ -14,4 +14,4 @@ for hostfilename in glob.glob('./host_vars/*.yml'):
                 groups[ hostgroup ] = { 'hosts': [] }
             groups[ hostgroup ]['hosts'].append( host['hostname'] )
 
-print(json.dumps(groups))
+print json.dumps(groups)
