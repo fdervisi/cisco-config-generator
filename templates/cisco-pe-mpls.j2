@@ -21,8 +21,8 @@ interface GigabitEthernet{{ interface.interface_id }}
 {% else %} 
 {% endif %}
 {% if interface.isis is defined %}
- ip router isis
  mpls ip
+ ip router isis
 {% else %}  
 {% endif %}
  ip address {{ interface.ip_address }}
