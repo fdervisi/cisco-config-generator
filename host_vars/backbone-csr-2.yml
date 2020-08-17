@@ -3,7 +3,8 @@
   hostname: "backbone-csr-2"
   ansible_host: 192.168.99.7
   host_groups: 
-    - pe  
+    - pe
+    - routers
   loopback0_ip_address: "172.16.0.6"
   
   vm_interfaces: 

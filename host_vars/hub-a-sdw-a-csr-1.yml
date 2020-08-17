@@ -4,6 +4,7 @@
   ansible_host: 192.168.99.8
   host_groups: 
     - bgp
+    - routers
   loopback0_ip_address: "172.16.0.7"
   
   vm_interfaces: 

@@ -1,6 +1,6 @@
 ---
 
-  hostname: "test_blue"
+  hostname: "hub-a-linux"
   ansible_host: 192.168.99.35
   server_template: CentOS7_Template    
   host_groups:
