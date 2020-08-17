@@ -10,3 +10,14 @@ all:
         bgp:
           hosts:
             hub-a-sdw-a-csr-1:
+    servers:
+      children:
+        blue:
+          hosts:
+            test_blue:
+        green:
+          hosts:
+            test_green:
+        default:
+          hosts:
+            test_default:
