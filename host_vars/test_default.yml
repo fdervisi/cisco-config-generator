@@ -1,0 +1,19 @@
+---
+
+  hostname: "test_default"
+  ansible_host: 192.168.99.35
+  template: CentOS7_Template    
+  host_groups:
+    - servers
+  
+  vm_interfaces: 
+    - name: Management
+      ip: 192.168.99.35
+      netmask: 255.255.255.0
+      gateway: 192.168.1.1
+    - name: BigSwitch
+      ip: 10.116.210.1
+      netmask: 255.255.255.0
+      gateway: 10.116.210.2
+      dns_servers:
+      - 8.8.8.8

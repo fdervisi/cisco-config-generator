@@ -1,0 +1,21 @@
+---
+- name: Create a VM from a template
+  hosts: servers
+  gather_facts: no
+  vars_files:
+    - vsphere.yml  
+  tasks:
+  - name: Deploy VM from template
+    vmware_guest:
+      hostname: '{{ vsphere_host }}'
+      username: '{{ vsphere_user }}'
+      password: '{{ vsphere_password }}'
+      validate_certs: false
+      datacenter: 'OVH'
+      state: present
+      folder: '/OVH/vm'
+      name: '{{ hostname }}'
+      networks: '{{ vm_interfaces }}'
+      template: '{{ server_template }}'
+      wait_for_ip_address: true
+    delegate_to: localhost
