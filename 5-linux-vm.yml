@@ -1,5 +1,5 @@
 ---
-- name: Create a VM from a template
+- name: Create Server VM from a template
   hosts: servers
   gather_facts: no
   vars_files:

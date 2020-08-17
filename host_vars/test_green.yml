@@ -5,6 +5,7 @@
   server_template: CentOS7_Template    
   host_groups:
     - green
+    - servers
   
   vm_interfaces: 
     - name: Management
