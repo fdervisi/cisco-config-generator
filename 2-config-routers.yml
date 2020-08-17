@@ -6,7 +6,7 @@
   tasks:
     - name: "First Task: Identify Correct Jinja Template"
       set_fact:
-        eigrp_path: "templates/cisco-pe-bgp.j2"
+        eigrp_path: "templates/cisco-pe-mpls.j2"
 
     - name: "Second Task: Source Template & Apply Configs!"
       cli_config:
