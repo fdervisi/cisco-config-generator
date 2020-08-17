@@ -4,7 +4,7 @@
   ansible_host: 192.168.99.20
   sd-wan_template: "ECV_Test"
   host_groups: 
-    - sd-wan
+    - sdwan
   
   vm_interfaces: 
     - name: Management

@@ -1,6 +1,6 @@
 ---
 - name: Create a VM from a template
-  hosts: sd-wan
+  hosts: sdwan
   gather_facts: no
   vars_files:
     - vsphere.yml  
