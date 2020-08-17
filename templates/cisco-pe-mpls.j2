@@ -48,6 +48,7 @@ router bgp {{ bgp_asn }}
  address-family vpnv4
   neighbor {{ peer.neighbor }} activate
   neighbor {{ peer.neighbor }} send-community extended
+  neighbor {{ peer.neighbor }} update-source loopback 0
  exit-address-family
  !
 {% endfor %}
