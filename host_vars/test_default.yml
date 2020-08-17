@@ -2,7 +2,7 @@
 
   hostname: "test_default"
   ansible_host: 192.168.99.35
-  template: CentOS7_Template    
+  server_template: CentOS7_Template    
   host_groups:
     - servers
   
