@@ -8,11 +8,11 @@
   
   vm_interfaces: 
     - name: Management
-      ipaddresses: 192.168.99.36
+      ip: 192.168.99.36
       netmask: 255.255.255.0
       gateway: 192.168.1.1
     - name: BigSwitch
-      ipaddresses: 10.116.210.1
+      ip: 10.116.210.1
       netmask: 255.255.255.0
       gateway: 10.116.210.2
       dns_servers:
