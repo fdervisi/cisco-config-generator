@@ -1,0 +1,55 @@
+---
+- name: Create a VM from a template
+  hosts: sd-wan
+  gather_facts: no
+  vars_files:
+    - vsphere.yml  
+  tasks:
+  - name: Deploy VM from template
+    vmware_guest:
+      hostname: '{{ vsphere_host }}'
+      username: '{{ vsphere_user }}'
+      password: '{{ vsphere_password }}'
+      validate_certs: false
+      datacenter: 'OVH'
+      folder: '/OVH/vm'
+      name: '{{ hostname }}'
+      networks: '{{ vm_interfaces }}'
+      template: '{{ sd-wan_template }}'
+      wait_for_ip_address: false
+    delegate_to: localhost
+
+  # Bootstrap ECV using vApp properties
+  - name: Update vApp Properties
+    vmware_guest:
+      hostname: '{{ vsphere_host }}'
+      username: '{{ vsphere_user }}'
+      password: '{{ vsphere_password }}'
+      name: '{{ inventory_hostname }}'
+      state: present
+      validate_certs: false
+      vapp_properties:
+        - id: com.silver-peak.ECV.hostname.1
+          type: string
+          value: '{{ hostname }}'
+        - id: com.silver-peak.ECV.account.1
+          type: string
+          value: 'SP-SEWAN-Metered with Orchestrator SP/fd-lab'
+        - id: com.silver-peak.ECV.key.1
+          type: string
+          value: ObqwGPq1jia3ayrBtHu2MVARXTAkIgPp
+ 
+    delegate_to: localhost
+
+  # Power on ECV
+  - name: Set the state of a virtual machine to poweron
+    vmware_guest_powerstate:
+      hostname: "{{ vsphere_host }}"
+      username: "{{ vsphere_user }}"
+      password: "{{ vsphere_password }}"
+      validate_certs: false
+      folder: "/OVH/vm"
+      name: "{{ hostname }}"
+      state: powered-on
+    delegate_to: localhost
+    register: deploy
