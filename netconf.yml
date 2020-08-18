@@ -24,4 +24,4 @@
     - name: Write config
       copy:
         content: "{{ pretty_config.xmlstring}}"
-        dest: "outputs{{ hostname }}_netconf.xml"
+        dest: "outputs/{{ hostname }}_netconf.xml"
