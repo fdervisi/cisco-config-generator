@@ -33,7 +33,7 @@
       </ip>
       <interface>
       {% for interface in interfaces %}
-        <GigabitEthernet operation="replace">
+        <GigabitEthernet>
           <name>{{ interface.interface_id }}</name>
           <mpls>
             <ip xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mpls"/>
