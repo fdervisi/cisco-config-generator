@@ -31,8 +31,8 @@
           </ip-route-interface-forwarding-list>
         </route>
       </ip>
-      {% for interface in interfaces %}
       <interface>
+      {% for interface in interfaces %}
         <GigabitEthernet>
           <name>{{ interface.interface_id }}</name>
       {% if interface.isis is defined %}    
@@ -56,8 +56,8 @@
             <auto>true</auto>
           </negotiation>
         </GigabitEthernet>
+      {% endfor %}  
       </interface>
-      {% endfor %}
       <interface>
         <Loopback>
           <name>0</name>
