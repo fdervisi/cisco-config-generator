@@ -31,9 +31,8 @@
           </ip-route-interface-forwarding-list>
         </route>
       </ip>
-
-      <interface>
       {% for interface in interfaces %}
+      <interface>
         <GigabitEthernet>
           <name>{{ interface.interface_id }}</name>
       {% if interface.isis is defined %}    
