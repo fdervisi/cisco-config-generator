@@ -1,6 +1,7 @@
  <config>
     <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
       <hostname>{{ hostname }}</hostname>
+      {% for vrf in vrfs %}
       <vrf>
         <definition>
           <name>backbone</name>
@@ -18,6 +19,7 @@
           </route-target>
         </definition>
       </vrf>
+      {% endfor %}
       <ip>
         <route>
           <ip-route-interface-forwarding-list>
