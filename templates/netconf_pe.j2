@@ -32,18 +32,12 @@
         </route>
       </ip>
       <interface>
-      {% for interface in interfaces %}
         <GigabitEthernet>
-          <name>{{ interface.interface_id }}</name>
-      {% if interface.isis is defined %}    
-          <mpls>
-            <ip xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mpls"/>
-          </mpls>
-      {% endif %}
+          <name>2</name>
           <ip>
             <address>
               <primary>
-                <address>{{ interface.ip_address }}/address>
+                <address>{{ loopback0_ip_address }}/address>
                 <mask>255.255.255.255</mask>
               </primary>
             </address>
@@ -56,7 +50,6 @@
             <auto>true</auto>
           </negotiation>
         </GigabitEthernet>
-      {% endfor %}  
         <Loopback>
           <name>0</name>
           <ip>
