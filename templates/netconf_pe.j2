@@ -1,5 +1,34 @@
  <config>
     <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+      <hostname>{{ hostname }}</hostname>
+      <vrf>
+        <definition>
+          <name>backbone</name>
+          <rd>{{ bgp_asn }}:{{ (loopback0_ip_address)[-1] }}</rd>
+          <address-family>
+            <ipv4/>
+          </address-family>
+          <route-target>
+            <export>
+              <asn-ip>{{ vrf.route_target }}</asn-ip>
+            </export>
+            <import>
+              <asn-ip>{{ vrf.route_target }}</asn-ip>
+            </import>
+          </route-target>
+        </definition>
+      </vrf>
+      <ip>
+        <route>
+          <ip-route-interface-forwarding-list>
+            <prefix>0.0.0.0</prefix>
+            <mask>0.0.0.0</mask>
+            <fwd-list>
+              <fwd>192.168.99.1</fwd>
+            </fwd-list>
+          </ip-route-interface-forwarding-list>
+        </route>
+      </ip>      
       <interface>
         <Loopback>
           <name>0</name>
