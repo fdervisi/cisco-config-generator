@@ -5,7 +5,7 @@
     - name: Get configuration
       netconf_get:
         source: running
-        filter: "<native><vrf></vrf></native>"
+#        filter: "<native><vrf></vrf></native>"
       register: config
 
     - name: Format XML for easy viewing
