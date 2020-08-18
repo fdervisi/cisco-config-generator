@@ -2,7 +2,7 @@
 
 - name: "First Play: Automate Routing Configs via Jinja2"
   hosts: pe
-  connection: network_cli
+  connection: netconf
   tasks:
     - name: "First Task: Identify Correct Jinja Template"
       set_fact:
