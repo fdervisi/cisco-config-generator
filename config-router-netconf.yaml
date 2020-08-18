@@ -22,7 +22,7 @@
                   </address-family>
                   <route-target>
                     <export>
-                      <asn-ip>1:100</asn-ip>
+                      <asn-ip>1:35</asn-ip>
                     </export>
                     <import>
                       <asn-ip>1:100</asn-ip>
