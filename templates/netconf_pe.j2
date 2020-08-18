@@ -31,7 +31,7 @@
           </ip-route-interface-forwarding-list>
         </route>
       </ip>
-      <interface operation="replace">
+      <interface>
       {% for interface in interfaces %}
         <GigabitEthernet>
           <name>{{ interface.interface_id }}</name>
