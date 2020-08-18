@@ -30,7 +30,35 @@
             </fwd-list>
           </ip-route-interface-forwarding-list>
         </route>
-      </ip>      
+      </ip>
+
+      <interface>
+      {% for interface in interfaces %}
+        <GigabitEthernet>
+          <name>{{ interface.interface_id }}</name>
+      {% if interface.isis is defined %}    
+          <mpls>
+            <ip xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mpls"/>
+          </mpls>
+      {% endif %}
+          <ip>
+            <address>
+              <primary>
+                <address>{{ interface.ip_address }}/address>
+                <mask>{{ mask }}</mask>
+              </primary>
+            </address>
+          </ip>
+          <mop>
+            <enabled>false</enabled>
+            <sysid>false</sysid>
+          </mop>
+          <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+            <auto>true</auto>
+          </negotiation>
+        </GigabitEthernet>
+      </interface>
+      {% endfor %}
       <interface>
         <Loopback>
           <name>0</name>
