@@ -18,7 +18,7 @@
     - name: Check and create Folder
       file:
         path: "outputs"
-        state: true
+        state: directory
       run_once: true
 
     - name: Write config
