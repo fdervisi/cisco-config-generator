@@ -2,7 +2,7 @@
     <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
       <hostname>{{ hostname }}</hostname>
       {% for vrf in vrfs %}
-      <vrf>
+      <vrf operation="replace">
         <definition>
           <name>backbone</name>
           <rd>{{ bgp_asn }}:{{ (loopback0_ip_address)[-1] }}</rd>
