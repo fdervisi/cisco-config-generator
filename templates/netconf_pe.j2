@@ -32,6 +32,27 @@
         </route>
       </ip>
       <interface>
+        <GigabitEthernet>
+          <name>2</name>
+          <mpls>
+            <ip xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mpls"/>
+          </mpls>
+          <ip>
+            <address>
+              <primary>
+                <address>172.16.253.1</address>
+                <mask>255.255.255.0</mask>
+              </primary>
+            </address>
+          </ip>
+          <mop>
+            <enabled>false</enabled>
+            <sysid>false</sysid>
+          </mop>
+          <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+            <auto>true</auto>
+          </negotiation>
+        </GigabitEthernet>
         <Loopback>
           <name>0</name>
           <ip>
