@@ -68,7 +68,7 @@
                   <ip>
                     <address>
                       <primary>
-                        <address>172.16.253.35</address>
+                        <address>172.16.253.1</address>
                         <mask>255.255.255.0</mask>
                       </primary>
                     </address>
