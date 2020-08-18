@@ -32,24 +32,6 @@
         </route>
       </ip>
       <interface>
-        <GigabitEthernet>
-          <name>2</name>
-          <ip>
-            <address>
-              <primary>
-                <address>{{ loopback0_ip_address }}/address>
-                <mask>255.255.255.255</mask>
-              </primary>
-            </address>
-          </ip>
-          <mop>
-            <enabled>false</enabled>
-            <sysid>false</sysid>
-          </mop>
-          <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
-            <auto>true</auto>
-          </negotiation>
-        </GigabitEthernet>
         <Loopback>
           <name>0</name>
           <ip>
