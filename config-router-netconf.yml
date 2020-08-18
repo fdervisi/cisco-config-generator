@@ -1,0 +1,28 @@
+- hosts: pe
+  connection: netconf
+  gather_facts: no
+  tasks:
+    - name: Configure Cisco Router
+      netconf_config:
+        content: 
+          <config>
+              <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+                <interface>
+                  <Loopback>
+                    <name>0</name>
+                    <ip>
+                      <address>
+                        <primary>
+                          <address>{{ loopback0_ip_address }}</address>
+                          <mask>255.255.255.255</mask>
+                        </primary>
+                      </address>
+                      <router>
+                        <isis/>
+                      </router>
+                    </ip>
+                  </Loopback>
+                </interface>
+              </native>
+          </config>  
+      register: config
