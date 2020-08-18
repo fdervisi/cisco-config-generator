@@ -35,9 +35,11 @@
       {% for interface in interfaces %}
         <GigabitEthernet>
           <name>{{ interface.interface_id }}</name>
+      {% if interface.isis is defined %}       
           <mpls>
             <ip xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mpls"/>
           </mpls>
+      {% endif %}    
           <ip>
             <address>
               <primary>
@@ -45,6 +47,11 @@
                 <mask>255.255.255.0</mask>
               </primary>
             </address>
+      {% if interface.isis is defined %}      
+            <router>
+              <isis/>
+            </router> 
+      {% endif %}           
           </ip>
           <mop>
             <enabled>false</enabled>
