@@ -32,6 +32,7 @@
         </route>
       </ip>
       <interface>
+      {% for interface in interfaces %}
         <GigabitEthernet>
           <name>2</name>
           <mpls>
@@ -53,6 +54,7 @@
             <auto>true</auto>
           </negotiation>
         </GigabitEthernet>
+        {% endfor %}
         <Loopback>
           <name>0</name>
           <ip>
