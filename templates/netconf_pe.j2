@@ -36,6 +36,11 @@
         <GigabitEthernet>
           <name>{{ interface.interface_id }}</name>
           <shutdown/>
+      {% if interface.vrf is defined %}    
+          <vrf>
+            <forwarding>{{ interface.vrf }}</forwarding>
+          </vrf>
+      {% endif %}            
       {% if interface.isis is defined %}       
           <mpls>
             <ip xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mpls"/>
