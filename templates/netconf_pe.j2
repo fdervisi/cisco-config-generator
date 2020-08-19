@@ -97,7 +97,7 @@
       <router>
         <bgp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-bgp">
           <id>{{ bgp_asn }}</id>
-          <bgp>
+          <bgp operation="replace">
             <log-neighbor-changes>true</log-neighbor-changes>
           </bgp>
       {% for peer in bgp %}    
