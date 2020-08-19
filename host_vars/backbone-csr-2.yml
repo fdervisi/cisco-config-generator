@@ -35,7 +35,11 @@
     - interface_id: "3"
       ip_address: "10.116.207.130"
       mask: "255.255.255.254"
-      vrf: "backbone"   
+      vrf: "backbone"
+    - interface_id: "4"
+      ip_address: "10.116.207.132"
+      mask: "255.255.255.254"   
+      vrf: "backbone"
   bgp:
     - neighbor: "172.16.0.5"
       remote_as: "420700000"
