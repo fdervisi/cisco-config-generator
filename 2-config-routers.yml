@@ -12,7 +12,24 @@
         content: "{{ lookup('template', eigrp_path) }}"
       notify: config_changed
       register: response
-  
+
+    - name: Format XML for easy viewing
+      xml:
+        xmlstring: "{{ response.stdout }}"
+        pretty_print: true
+      register: pretty_config
+      changed_when: false
+ 
+    - name: Check and create Folder
+      file:
+        path: "outputs"
+        state: directory
+      run_once: true      
+
+    - name: Write config
+      copy:
+        content: "{{ pretty_config.xmlstring}}"
+        dest: "outputs/{{ hostname }}_failed_netconf.xml"
 
   handlers:
     - name: "Output Changes..."
