@@ -35,7 +35,6 @@
       {% for interface in interfaces %}
         <GigabitEthernet>
           <name>{{ interface.interface_id }}</name>
-          <shutdown/>
       {% if interface.vrf is defined %}    
           <vrf>
             <forwarding>{{ interface.vrf }}</forwarding>
