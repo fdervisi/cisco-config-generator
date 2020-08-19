@@ -4,7 +4,7 @@
       {% for vrf in vrfs %}
       <vrf operation="replace">
         <definition>
-          <name>backbone</name>
+          <name>{{ vrf.vrf }}</name>
           <rd>{{ bgp_asn }}:{{ (loopback0_ip_address)[-1] }}</rd>
           <address-family>
             <ipv4/>
