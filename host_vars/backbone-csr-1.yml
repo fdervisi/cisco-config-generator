@@ -19,11 +19,11 @@
     - vrf: "backbone"
       rd: 35
       route_target: "1:38"
-      neighbor: "10.116.207.5"
+      neighbor: "1.1.1.1"
       remote_as: "420700099"
     - vrf: "backbone"
       route_target: "1:38"
-      neighbor: "10.116.207.7"
+      neighbor: "2.2.2.2"
       remote_as: "420700099"
   interfaces:
     - interface_id: "1"
@@ -42,6 +42,6 @@
       mask: "255.255.255.254"
       vrf: "backbone"
   bgp:
-    - neighbor: "172.16.0.6"
+    - neighbor: "3.3.3.3"
       remote_as: "420700000"
       update_source_loopback: "yes"
