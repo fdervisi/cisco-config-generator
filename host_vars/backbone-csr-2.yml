@@ -37,8 +37,8 @@
       mask: "255.255.255.254"
       vrf: "backbone"
     - interface_id: "4"
-      ip_address: "10.116.207.1"
-      mask: "255.255.255.254"
+      ip_address: "192.168.0.1"
+      mask: "255.255.255.0"
       vrf: "backbone"
   bgp:
     - neighbor: "172.16.0.5"
