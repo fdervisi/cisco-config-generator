@@ -153,15 +153,17 @@
           </address-family>
       {% endfor %}          
         </bgp>
+      {% if isis is defined %}  
         <isis xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-isis">
           <metric-style>
             <wide/>
           </metric-style>
           <is-type>level-2-only</is-type>
           <net>
-            <tag>49.0001.0000.0000.0005.00</tag>
+            <tag>49.0001.0000.0000.000{{ (loopback0_ip_address)[-1] }}.00</tag>
           </net>
         </isis>
+        {% endif %}
       </router>            
     </native>
 </config>
