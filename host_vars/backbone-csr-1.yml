@@ -1,6 +1,6 @@
 ---
 
-  hostname: "testvrf-csr-1"
+  hostname: "backbone-csr-1"
   ansible_host: 192.168.99.6
   host_groups: 
     - pe
