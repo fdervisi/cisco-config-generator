@@ -35,7 +35,7 @@
       {% for interface in interfaces %}
         <GigabitEthernet>
           <name>{{ interface.interface_id }}</name>
-          <shutdown/>
+          <no shutdown/>
       {% if interface.isis is defined %}       
           <mpls>
             <ip xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mpls"/>
