@@ -32,6 +32,14 @@
       ip_address: "172.16.253.1"
       mask: "255.255.255.0"
       isis: True
+    - interface_id: "3"
+      ip_address: "10.116.207.4"
+      mask: "255.255.255.254"   
+      vrf: "backbone"
+    - interface_id: "4"
+      ip_address: "10.116.207.6"
+      mask: "255.255.255.254"
+      vrf: "test"
   bgp:
     - neighbor: "172.16.0.6"
       remote_as: "420700000"
