@@ -94,7 +94,7 @@
           <operation>permit</operation>
         </route-map-without-order-seq>
       </route-map>
-      <router>
+      <router operation="replace">
         <bgp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-bgp">
           <id>{{ bgp_asn }}</id>
           <bgp operation="replace">
