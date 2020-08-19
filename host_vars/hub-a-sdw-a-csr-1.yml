@@ -32,7 +32,6 @@
       ip_address: "10.116.207.8"
       mask: "255.255.255.254"
   bgp:
-    - neighbor: "10.116.207.11"
-      remote_as: "4290706502"
-    - neighbor: "10.116.207.6"
-      remote_as: "4290700000"
+    - neighbor: "172.16.0.6"
+      remote_as: "420700000"
+      update_source_loopback: "yes"

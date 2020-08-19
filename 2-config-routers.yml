@@ -18,4 +18,4 @@
     - name: "Output Changes..."
       listen: config_changed
       debug:
-        msg: "{{ response.stdout }}"
+        msg: "{{ response }}"
