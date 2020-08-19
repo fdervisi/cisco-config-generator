@@ -14,10 +14,10 @@
     - name: BigSwitch
     - name: BigSwitch
 
-  bgp_asn: "4290704900"
+  bgp_asn: "65010"
   interfaces:
     - interface_id: "1"
-      ip_address: "192.168.99.8"
+      ip_address: "192.168.100.2"
       mask: "255.255.255.0"
     - interface_id: "2"
       ip_address: "10.116.207.11"
@@ -32,7 +32,7 @@
       ip_address: "10.116.207.8"
       mask: "255.255.255.254"
   bgp:
-    - neighbor: "10.116.207.12"
-      remote_as: "4290706502"
+    - neighbor: "192.168.100.1"
+      remote_as: "3209"
     - neighbor: "10.116.207.4"
       remote_as: "4290700000"
