@@ -17,10 +17,10 @@
   bgp_asn: "65010"
   interfaces:
     - interface_id: "1"
-      ip_address: "192.168.100.2"
+      ip_address: "192.168.99.8"
       mask: "255.255.255.0"
     - interface_id: "2"
-      ip_address: "10.116.207.11"
+      ip_address: "192.168.100.2"
       mask: "255.255.255.254"
     - interface_id: "3"
       ip_address: "10.116.207.5"
