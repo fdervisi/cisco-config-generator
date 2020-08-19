@@ -108,27 +108,18 @@
               <Loopback>0</Loopback>
             </update-source>
           </neighbor>
-      {% endfor %}   
+      {% endfor %}
+      {% for vrf in vrfs %}   
           <address-family>
             <with-vrf>
               <ipv4>
                 <af-name>unicast</af-name>
                 <vrf>
-                  <name>backbone</name>
+                  <name>{{ vrf.vrf }}</name>
                   <ipv4-unicast>
                     <neighbor>
-                      <id>10.116.207.5</id>
-                      <remote-as>420700099</remote-as>
-                      <activate/>
-                      <route-map>
-                        <inout>out</inout>
-                        <route-map-name>Allow</route-map-name>
-                      </route-map>
-                      <send-community/>
-                    </neighbor>
-                    <neighbor>
-                      <id>10.116.207.7</id>
-                      <remote-as>420700099</remote-as>
+                      <id>vrf.neighbor</id>
+                      <remote-as>vrf.remote_as</remote-as>
                       <activate/>
                       <route-map>
                         <inout>out</inout>
