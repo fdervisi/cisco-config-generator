@@ -69,6 +69,7 @@
         </GigabitEthernet>
         <GigabitEthernet>
           <name>{{ interface.interface_id }}</name>   
+          <shutdown operation="delete"/>
         </GigabitEthernet> 
         {% endfor %}
         <Loopback>
