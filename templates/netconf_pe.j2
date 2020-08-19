@@ -73,7 +73,7 @@
           <name>{{ interface.interface_id }}</name>   
           <shutdown operation="delete"/>
         </GigabitEthernet> 
-        {% endfor %}
+      {% endfor %}
         <Loopback>
           <name>0</name>
           <ip>
@@ -153,9 +153,9 @@
               </vpnv4>
             </no-vrf>
       {% endfor %}
-      {% endif %}    
           </address-family>
-      {% endfor %}          
+      {% endfor %}
+      {% endif %}        
         </bgp>
       {% if isis is defined %}  
         <isis xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-isis">
