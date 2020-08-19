@@ -111,6 +111,7 @@
             </update-source>
           </neighbor>
       {% endfor %}
+      {% if vrfs is defined %}
       {% for vrf in vrfs %}   
           <address-family>
             <with-vrf>
@@ -151,7 +152,8 @@
                 </vpnv4-unicast>
               </vpnv4>
             </no-vrf>
-      {% endfor %}       
+      {% endfor %}
+      {% endif %}    
           </address-family>
       {% endfor %}          
         </bgp>
