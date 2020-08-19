@@ -1,6 +1,6 @@
 ---
 
-  hostname: "backbone-csr-1"
+  hostname: "testvrf-csr-1"
   ansible_host: 192.168.99.6
   host_groups: 
     - pe
@@ -16,11 +16,11 @@
   bgp_asn: "420700000"
   isis: True
   vrfs:
-    - vrf: "backbone"
+    - vrf: "testvrf"
       route_target: "1:35"
       neighbor: "10.116.207.5"
       remote_as: "420700099"
-    - vrf: "backbone"
+    - vrf: "testvrf"
       route_target: "1:36"
       neighbor: "10.116.207.7"
       remote_as: "420700099"
@@ -35,11 +35,11 @@
     - interface_id: "3"
       ip_address: "10.116.207.4"
       mask: "255.255.255.254"   
-      vrf: "backbone"
+      vrf: "testvrf"
     - interface_id: "4"
       ip_address: "10.116.207.6"
       mask: "255.255.255.254"
-      vrf: "backbone"
+      vrf: "testvrf"
   bgp:
     - neighbor: "172.16.0.6"
       remote_as: "420700000"
