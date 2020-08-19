@@ -39,7 +39,6 @@
     - interface_id: "4"
       ip_address: "10.116.207.6"
       mask: "255.255.255.254"
-      vrf: "backbone"
   bgp:
     - neighbor: "172.16.0.6"
       remote_as: "420700000"

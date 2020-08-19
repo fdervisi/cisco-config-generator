@@ -34,5 +34,5 @@
   bgp:
     - neighbor: "10.116.207.12"
       remote_as: "4290706502"
-    - neighbor: "10.116.207.6"
+    - neighbor: "10.116.207.4"
       remote_as: "4290700000"
