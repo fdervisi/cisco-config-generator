@@ -17,7 +17,6 @@
   isis: True
   vrfs:
     - vrf: "backbone"
-      rd: 35
       route_target: "1:38"
       neighbor: "10.116.207.5"
       remote_as: "420700099"
