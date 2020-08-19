@@ -16,7 +16,7 @@
   bgp_asn: "420700000"
   isis: True
   vrfs:
-    - vrf: "backbone"
+    - vrf: "test"
       route_target: "1:35"
       neighbor: "10.116.207.5"
       remote_as: "420700099"
