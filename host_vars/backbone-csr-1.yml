@@ -20,8 +20,8 @@
       route_target: "1:35"
       neighbor: "10.116.207.5"
       remote_as: "420700099"
-    - vrf: "backbone"
-      route_target: "1:35"
+    - vrf: "test"
+      route_target: "1:36"
       neighbor: "10.116.207.7"
       remote_as: "420700099"
   interfaces:
@@ -38,8 +38,8 @@
       vrf: "backbone"
     - interface_id: "4"
       ip_address: "10.116.207.6"
-      mask: "255.255.255.254"        
-      vrf: "backbone"
+      mask: "255.255.255.254"
+      vrf: "test"
   bgp:
     - neighbor: "172.16.0.6"
       remote_as: "420700000"
