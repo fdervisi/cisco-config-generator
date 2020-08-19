@@ -32,7 +32,7 @@
       ip_address: "172.16.253.2"
       mask: "255.255.255.0"
       isis: True
-    - interface_id: "4"
+    - interface_id: "3"
       ip_address: "10.116.207.130"
       mask: "255.255.255.254"
       vrf: "backbone"   
