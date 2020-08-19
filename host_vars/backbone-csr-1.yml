@@ -21,10 +21,6 @@
       route_target: "1:38"
       neighbor: "10.116.207.5"
       remote_as: "420700099"
-    - vrf: "backbone"
-      route_target: "1:38"
-      neighbor: "10.116.207.7"
-      remote_as: "420700099"
   interfaces:
     - interface_id: "1"
       ip_address: "192.168.99.6"
