@@ -7,15 +7,16 @@
     - name: "First Task: Identify Correct Jinja Template"
       set_fact:
         eigrp_path: "templates/netconf_pe.j2"
+  
     - name: "Second Task: Source Template & Apply Configs!"
       netconf_config:
         content: "{{ lookup('template', eigrp_path) }}"
       notify: config_changed
-      register: response
+      register: config
 
     - name: Format XML for easy viewing
       xml:
-        xmlstring: "{{ response.stdout }}"
+        xmlstring: "{{ config.stdout }}"
         pretty_print: true
       register: pretty_config
       changed_when: false
