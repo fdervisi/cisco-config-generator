@@ -134,12 +134,13 @@
                 </vrf>
               </ipv4>
             </with-vrf>
+      {% for peer in bgp %}         
             <no-vrf>
               <vpnv4>
                 <af-name>unicast</af-name>
                 <vpnv4-unicast>
                   <neighbor>
-                    <id>172.16.0.6</id>
+                    <id>{{ peer.neighbor }}</id>
                     <activate/>
                     <send-community>
                       <send-community-where>extended</send-community-where>
@@ -148,8 +149,9 @@
                 </vpnv4-unicast>
               </vpnv4>
             </no-vrf>
+      {% endfor %}       
           </address-family>
-        {% endfor %}          
+      {% endfor %}          
         </bgp>
         <isis xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-isis">
           <metric-style>
