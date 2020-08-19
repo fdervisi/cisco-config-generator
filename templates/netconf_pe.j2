@@ -93,6 +93,81 @@
           <seq_no>10</seq_no>
           <operation>permit</operation>
         </route-map-without-order-seq>
-      </route-map>      
+      </route-map>
+      <router>
+        <bgp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-bgp">
+          <id>{{ bgp_asn }}</id>
+          <bgp>
+            <log-neighbor-changes>true</log-neighbor-changes>
+          </bgp>
+      {% for peer in bgp %}    
+          <neighbor>
+            <id>{{ peer.neighbor }}</id>
+            <remote-as>{{ peer.remote_as }}</remote-as>
+            <update-source>
+              <Loopback>0</Loopback>
+            </update-source>
+          </neighbor>
+      {% endfor %}   
+          <address-family>
+            <with-vrf>
+              <ipv4>
+                <af-name>unicast</af-name>
+                <vrf>
+                  <name>backbone</name>
+                  <ipv4-unicast>
+                    <neighbor>
+                      <id>10.116.207.5</id>
+                      <remote-as>420700099</remote-as>
+                      <activate/>
+                      <route-map>
+                        <inout>out</inout>
+                        <route-map-name>Allow</route-map-name>
+                      </route-map>
+                      <send-community/>
+                    </neighbor>
+                    <neighbor>
+                      <id>10.116.207.7</id>
+                      <remote-as>420700099</remote-as>
+                      <activate/>
+                      <route-map>
+                        <inout>out</inout>
+                        <route-map-name>Allow</route-map-name>
+                      </route-map>
+                      <send-community/>
+                    </neighbor>
+                    <redistribute>
+                      <connected/>
+                    </redistribute>
+                  </ipv4-unicast>
+                </vrf>
+              </ipv4>
+            </with-vrf>
+            <no-vrf>
+              <vpnv4>
+                <af-name>unicast</af-name>
+                <vpnv4-unicast>
+                  <neighbor>
+                    <id>172.16.0.6</id>
+                    <activate/>
+                    <send-community>
+                      <send-community-where>extended</send-community-where>
+                    </send-community>
+                  </neighbor>
+                </vpnv4-unicast>
+              </vpnv4>
+            </no-vrf>
+          </address-family>
+        </bgp>
+        <isis xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-isis">
+          <metric-style>
+            <wide/>
+          </metric-style>
+          <is-type>level-2-only</is-type>
+          <net>
+            <tag>49.0001.0000.0000.0005.00</tag>
+          </net>
+        </isis>
+      </router>            
     </native>
 </config>
