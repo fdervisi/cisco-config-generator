@@ -13,7 +13,7 @@
     - name: BigSwitch
     - name: BigSwitch
 
-  bgp_asn: "420700000"
+  bgp_asn: "3209"
   isis: True
   vrfs:
     - vrf: "backbone"
@@ -42,5 +42,5 @@
       vrf: "backbone"
   bgp:
     - neighbor: "172.16.0.5"
-      remote_as: "420700000"
+      remote_as: "3209"
       update_source_loopback: "yes"

@@ -17,11 +17,11 @@
   isis: True
   vrfs:
     - vrf: "backbone"
-      route_target: "1:38"
+      route_target: "1:100"
       neighbor: "192.168.100.2"
       remote_as: "65010"
     - vrf: "backbone"
-      route_target: "1:38"
+      route_target: "1:100"
       neighbor: "192.168.200.2"
       remote_as: "65010"
   interfaces:
@@ -34,7 +34,7 @@
       isis: True
     - interface_id: "3"
       ip_address: "192.168.100.1"
-      mask: "255.255.255.0"   
+      mask: "255.255.255.0"
       vrf: "backbone"
     - interface_id: "4"
       ip_address: "192.168.200.1"
