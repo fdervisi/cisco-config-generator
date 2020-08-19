@@ -5,7 +5,7 @@
       <vrf operation="replace">
         <definition>
           <name>{{ vrf.vrf }}</name>
-          <rd>{{ bgp_asn }}:{{ (loopback0_ip_address)[-1] }}</rd>
+          <rd>{{ bgp_asn }}:{{ (vrf.route_target).split(":")[1] }}</rd>
           <address-family>
             <ipv4/>
           </address-family>
