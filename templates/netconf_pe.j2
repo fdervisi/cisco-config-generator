@@ -87,5 +87,12 @@
           </ip>
         </Loopback>
       </interface>
+      <route-map>
+        <name>Allow</name>
+        <route-map-without-order-seq xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-route-map">
+          <seq_no>10</seq_no>
+          <operation>permit</operation>
+        </route-map-without-order-seq>
+      </route-map>      
     </native>
 </config>
