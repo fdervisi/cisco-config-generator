@@ -35,7 +35,6 @@
       {% for interface in interfaces %}
         <GigabitEthernet>
           <name>{{ interface.interface_id }}</name>
-          <no shutdown/>
       {% if interface.isis is defined %}       
           <mpls>
             <ip xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mpls"/>
@@ -62,6 +61,10 @@
             <auto>true</auto>
           </negotiation>
         </GigabitEthernet>
+        <GigabitEthernet>
+          <name>{{ interface.interface_id }}</name>   
+          <shutdown operation="delete"/>
+        <GigabitEthernet>  
         {% endfor %}
         <Loopback>
           <name>0</name>
