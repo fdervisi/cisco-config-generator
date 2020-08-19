@@ -118,8 +118,8 @@
                   <name>{{ vrf.vrf }}</name>
                   <ipv4-unicast>
                     <neighbor>
-                      <id>vrf.neighbor</id>
-                      <remote-as>vrf.remote_as</remote-as>
+                      <id>{{ vrf.neighbor }}</id>
+                      <remote-as>{{ vrf.remote_as }}</remote-as>
                       <activate/>
                       <route-map>
                         <inout>out</inout>
