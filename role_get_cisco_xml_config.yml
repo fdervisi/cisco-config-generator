@@ -1,0 +1,12 @@
+---
+
+- name: "Get Cisco XML config via Netconf"
+  hosts: routers
+  gather_facts: no
+  
+  vars:
+
+  vars_files:
+
+  roles:
+    - get_cisco_config_netconf
