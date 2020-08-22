@@ -1,6 +1,6 @@
 ---
 
-  hostname: "silver2"
+  hostname: "silver1"
   ansible_host: 192.168.99.20
   sd-wan_template: "ECV_Test"
   host_groups: 
