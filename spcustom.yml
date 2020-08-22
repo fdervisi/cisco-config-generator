@@ -1,0 +1,52 @@
+{  
+    pre: {
+        1: {
+            name: "",        // always empty
+            value: "/license/key/1,uint32,1,/license/key/1/license_key,string,_$LICENSE$",
+            action: "configdb",
+            "params": [
+                {
+                    "bname": "/license/key/1",
+                    "btype": "uint32",
+                    "bval": "1"
+                },
+                {
+                    "bname": "/license/key/1/license_key",
+                    "btype": "string",
+                    "bval": "abcdlkjasiwkaghkl;asdjfoqpwiekhgasdjfl"
+                }  
+            ]  
+        },
+        2: {
+            name: "",
+            value: "/system/hostname,hostname,_$HOSTNAME$",
+            action: "configdb",
+            "params": [
+                {
+                    "bname": "/system/hostname",
+                    "btype": "string",
+                    "bval": "testhost"
+                }  
+            ]  
+        },
+        3: {
+            name: "",
+            value: "/bin/ls -l > /tmp/pre-log.txt",
+            action: "shell",
+            "params": "/bin/ls -l > /tmp/pre-log.txt"
+        }, 
+        4: ...
+    },
+    post: {
+        1: {
+            ...
+        },
+        2: {
+            name: "",
+            value: "en;conf t;system mode bridge ip 10.1.1.116 /24 nexthop 10.1.1.1",
+            action: "cli",
+            "params": "en;conf t;system mode bridge ip 10.1.1.116 /24 nexthop 10.1.1.1"
+        },
+        3: ...
+    }  
+}
