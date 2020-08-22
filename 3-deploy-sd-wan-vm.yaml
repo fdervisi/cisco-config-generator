@@ -17,7 +17,7 @@
       networks: '{{ vm_interfaces }}'
       cdrom:
         type: iso
-        iso_path: "[datastore] spcustom.iso"      
+        iso_path: "[Datastore] spcustom.iso"      
       template: 'ECV_Test'
       wait_for_ip_address: false
     delegate_to: localhost
