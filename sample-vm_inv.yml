@@ -1,0 +1,21 @@
+---
+# Sample configuration file for VMware Guest dynamic inventory
+    plugin: vmware_vm_inventory
+    strict: False
+    hostname: '{{ vsphere_host }}'
+    username: '{{ vsphere_user }}'
+    password: '{{ vsphere_password }}'
+    validate_certs: False
+    with_tags: True
+
+# Gather minimum set of properties for VMware guest
+    plugin: vmware_vm_inventory
+    strict: False
+    hostname: '{{ vsphere_host }}'
+    username: '{{ vsphere_user }}'
+    password: '{{ vsphere_password }}'
+    validate_certs: False
+    with_tags: False
+    properties:
+    - 'name'
+    - 'guest.ipAddress'
