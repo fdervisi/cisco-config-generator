@@ -1,0 +1,26 @@
+---
+  - name: Get configuration
+    connection: netconf
+    netconf_get:
+      source: running
+      #filter: "<native><vrf></vrf></native>"
+    register: config
+
+  - name: Format XML for easy viewing
+    connection: netconf
+    xml:
+      xmlstring: "{{ config.stdout }}"
+      pretty_print: true
+    register: pretty_config
+    changed_when: false
+
+  - name: Check and create Folder
+    file:
+      path: "outputs"
+      state: directory
+    run_once: true
+
+  - name: Write config
+    copy:
+      content: "{{ pretty_config.xmlstring}}"
+      dest: "outputs/{{ hostname }}_netconf.xml"
