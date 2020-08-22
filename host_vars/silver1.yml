@@ -8,6 +8,8 @@
   
   vm_interfaces: 
     - name: Management
+      ip_address: "192.168.99.35"
+      mask: "255.255.255.0"
     - name: BigSwitch
     - name: BigSwitch
     - name: BigSwitch
