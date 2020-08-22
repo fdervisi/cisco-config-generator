@@ -22,6 +22,24 @@
       wait_for_ip_address: false
     delegate_to: localhost
 
+ # Bootstrap CSR1000v using vApp properties
+  - name: Update vApp Properties
+    vmware_guest:
+      hostname: '{{ vsphere_host }}'
+      username: '{{ vsphere_user }}'
+      password: '{{ vsphere_password }}'
+      name: '{{ inventory_hostname }}'
+      state: present
+      validate_certs: false
+      vapp_properties:
+        - id: www.silver-peak.com.ECV.hostname.1
+          type: string
+          value: '{{ hostname }}'
+        - id: com.silver-peak.ECV.hostname.1
+          type: string
+          value: '{{ hostname }}'
+    delegate_to: localhost
+
   # Power on ECV
   - name: Set the state of a virtual machine to poweron
     vmware_guest_powerstate:
