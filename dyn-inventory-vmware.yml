@@ -1,0 +1,9 @@
+---
+
+plugin: vmware_vm_inventory
+strict: False
+hostname: '{{ vsphere_host }}'
+username: '{{ vsphere_user }}'
+password: '{{ vsphere_password }}'
+validate_certs: false
+with_tags: True
