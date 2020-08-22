@@ -1,0 +1,43 @@
+---
+- name: Create a VM from a template
+  hosts: sdwan
+  gather_facts: no
+  vars_files:
+    - vsphere.yml  
+  tasks:
+
+ # Bootstrap CSR1000v using vApp properties
+  - name: Update vApp Properties
+    vmware_guest:
+      hostname: '{{ vsphere_host }}'
+      username: '{{ vsphere_user }}'
+      password: '{{ vsphere_password }}'
+      name: '{{ inventory_hostname }}'
+      state: present
+      validate_certs: false
+      vapp_properties:
+        - id: hostname
+          type: string
+          value: '{{ hostname }}'
+        - id: key
+          type: string
+          value: 'ZCeN5FB1SW1tdLyUXMWIBG66nr3WXUeu'
+        - id: key.pre.1
+          type: string
+          value: 'configdb:/cn/tunneld/portal/config/registration/key,string,_$'
+        - id: account
+          type: string
+          value: 'SP-SEWAN-Metered with Orchestrator SP/FD-Stable'          
+        - id: account.pre.2
+          type: string
+          value: 'configdb:/cn/tunneld/portal/config/registration/account,string,_$'
+        - id: automac
+          type: string
+          value: 'true'
+        - id: automac.pre.3
+          type: string
+          value: 'configdb:/net/mac/system/auto_config,bool,_$'       
+        - id: .post.1
+          type: string
+          value: 'cli:en;write memory;reboot noconfirm'       
+    delegate_to: localhost
