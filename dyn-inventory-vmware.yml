@@ -6,4 +6,4 @@ hostname: '{{ vsphere_host }}'
 username: '{{ vsphere_user }}'
 password: '{{ vsphere_password }}'
 validate_certs: false
-with_tags: True
+#with_tags: True
