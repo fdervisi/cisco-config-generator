@@ -16,8 +16,8 @@
       name: '{{ hostname }}'
       networks: '{{ vm_interfaces }}'
       cdrom:
-        type: client
-        iso_path: "/home/centos/cisco-config-generato/spcustom.iso"      
+        type: iso
+        iso_path: "[datastore] spcustom.iso"      
       template: 'ECV_Test'
       wait_for_ip_address: false
     delegate_to: localhost
