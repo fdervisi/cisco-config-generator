@@ -1,7 +1,7 @@
 ---
 
 - name: "Get Cisco XML config via Netconf"
-  hosts: routers
+  hosts: pe
   gather_facts: no
   
   vars:
