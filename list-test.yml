@@ -10,7 +10,7 @@
 
       - name: Setup a string variable
         set_fact:
-          ip: "{{ ip + ansible_host }}"
+          host_ip: "{{ ansible_host }}"
         register: ip
 
       - debug: var=ip
