@@ -13,4 +13,4 @@
           my_name: "{{ansible_host }}"
         register: ip
 
-      - debug: var=ip
+      - debug: var=ip.stdout
