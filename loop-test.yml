@@ -3,7 +3,11 @@
   - name: "First Play: Automate Routing Configs via Jinja2"
     hosts: routers
     tasks:
-      - name: count to 3
+      #- name: count to 3
+      #  delegate_to: 127.0.0.1
+      #  debug: msg={{item}}
+      #  with_items: "{{ host_groups }}"
+      - name: check if
         delegate_to: 127.0.0.1
-        debug: msg={{item}}
-        with_items: "{{ host_groups }}"
+        debug: msg="PE Templte"
+        when: "pe" in "{{ host_groups }}"
