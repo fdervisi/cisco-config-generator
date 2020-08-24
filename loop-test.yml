@@ -10,7 +10,7 @@
       - name: set_fact
         set_fact:
           foo: "{{ foo }} + [ '{{ item }}' ]"
-        with_items: {{ host_groups }}
+        with: {{ ansible_host }}
         vars:
           foo: []
 
