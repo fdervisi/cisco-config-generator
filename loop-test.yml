@@ -2,7 +2,6 @@
 
   - name: "First Play: Automate Routing Configs via Jinja2"
     hosts: all
-    delegate_to: 127.0.0.1
     vars:
       gruppe: 
         - pe
@@ -13,6 +12,7 @@
           foo: "{{ ansible_host }}"
         vars:
           foo: []
+        delegate_to: 127.0.0.1
 
       - name: Print the var
         debug:
