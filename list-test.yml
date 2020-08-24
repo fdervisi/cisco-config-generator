@@ -9,8 +9,8 @@
     tasks: 
 
       - name: Setup a string variable
-        set_fact:
-          host_ip: "{{ inventory_hostname }}"
+        debug:
+          msg: "{{ lookup('template', 'templates/test.j2') }}"
         register: ip
 
       - debug: var=ip
