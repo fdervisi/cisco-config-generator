@@ -1,3 +1,5 @@
+---
+
 hosts: localhost
   tasks:
     - name: count to 3
