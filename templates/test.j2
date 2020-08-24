@@ -1,3 +1,3 @@
 {% for host in groups['servers'] %}
-{{ hostvars[host]["vm_interfaces"]["ip"][1] }}
+{{ hostvars[host]["vm_interfaces"]["ip"] }}
 {% endfor %}
