@@ -14,7 +14,7 @@
         template: "templates/netconf_bgp.j2"
       when: '"bgp" in host_groups'
       register: test
-      debug: msg=test
+    debug: msg=test
 
     - name: "Second Task: Source Template & Apply Configs!"
       netconf_config:
