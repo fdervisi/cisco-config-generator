@@ -1,5 +1,6 @@
 ---
 
+name: "First Play: Automate Routing Configs via Jinja2"
 hosts: localhost
 tasks:
   - name: count to 3
