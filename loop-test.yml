@@ -2,6 +2,10 @@
 
   - name: "First Play: Automate Routing Configs via Jinja2"
     hosts: routers
+    vars:
+      gruppe: 
+        - pe
+        - router
     tasks:
       #- name: count to 3
       #  delegate_to: 127.0.0.1
@@ -10,4 +14,4 @@
       - name: check if
         delegate_to: 127.0.0.1
         debug: msg="PE Templte"
-        when: routers in host_groups
+        when: routers in gruppe
