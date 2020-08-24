@@ -3,7 +3,7 @@
   hostname: "hub-a-sdw-a-csr-1"
   ansible_host: 192.168.99.8
   host_groups: 
-    - pe
+    - bgp
     - routers
   loopback0_ip_address: "172.16.0.7"
   
