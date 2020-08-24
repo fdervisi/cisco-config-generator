@@ -9,7 +9,7 @@
     tasks:
       - name: set_fact
         set_fact:
-          foo: {{ ansible_host }}
+          foo: "{{ ansible_host }}"
         vars:
           foo: []
 
