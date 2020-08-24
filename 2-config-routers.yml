@@ -6,11 +6,17 @@
   tasks:
     - name: "First Task: Identify Correct Jinja Template"
       set_fact:
-        eigrp_path: "templates/netconf_pe.j2"   
+        template: "templates/netconf_pe.j2"
+      when: '"pe" in host_groups'
+
+    - name: "First Task: Identify Correct Jinja Template"
+      set_fact:
+        template: "templates/netconf_bgp.j2"
+      when: '"bgp" in host_groups'
   
     - name: "Second Task: Source Template & Apply Configs!"
       netconf_config:
-        content: "{{ lookup('template', eigrp_path) }}"
+        content: "{{ lookup('template', template) }}"
       notify: config_changed
       register: response
 
