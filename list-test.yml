@@ -17,13 +17,10 @@
 
       - name: Check all port numbers are accessible from current host
         wait_for:
-          host: 192.168.102.10
+          host: "{{ item }}"
           port: 80
           state: started         # Port should be open
           delay: 0               # No wait before first check (sec)
           timeout: 3             # Stop checking after timeout (sec)
         ignore_errors: yes
-        with_items:
-          - 443
-          - 80
-          - 80443
+        with_items: ip
