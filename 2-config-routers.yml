@@ -8,6 +8,10 @@
       set_fact:
         template: "templates/netconf_pe.j2"
       when: '"pe" in host_groups'
+      register: test
+      
+    - debug: 
+        var: test      
 
     - name: "First Task: Identify Correct Jinja Template"
       set_fact:
