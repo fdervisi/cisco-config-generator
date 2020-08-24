@@ -1,0 +1,4 @@
+tasks:
+  - name: count to 3
+    debug: msg={{item}}
+    with_items: [1, 2, 3]
