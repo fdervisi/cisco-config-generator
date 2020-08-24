@@ -10,7 +10,7 @@
 
       - name: Setup a string variable
         set_fact:
-          host_ip: {{ inventory_hostname }}
+          host_ip: "{{ inventory_hostname }}"
         register: ip
 
       - debug: var=ip
