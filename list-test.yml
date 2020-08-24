@@ -11,6 +11,6 @@
       - name: Setup a string variable
         set_fact:
           host_ip: "{{ ansible_host }}"
-        register: ip + host_ip
+        register: ip
 
       - debug: var=ip
