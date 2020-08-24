@@ -1,4 +1,4 @@
 ---
 
-user: "sp-user"
-password: "SilverPeak1!"
+ansible_user: "sp-user"
+ansible_ssh_pass: "SilverPeak1!"
