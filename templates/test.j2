@@ -1,3 +1,3 @@
-{% for host in groups['all'] %}
+{% for host in groups['servers'] %}
 {{ hostvars[host]["vm_interfaces"][1] }}
 {% endfor %}
