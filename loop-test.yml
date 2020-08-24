@@ -6,4 +6,4 @@
       - name: count to 3
         delegate_to: 127.0.0.1
         debug: msg={{item}}
-        with_items: [1, 2, 3]
+        with_items: [{{ host_groups }}]
