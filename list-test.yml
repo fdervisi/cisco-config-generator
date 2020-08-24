@@ -2,23 +2,13 @@
 
   - name: "First Play: Automate Routing Configs via Jinja2"
     hosts: all
-    tasks:
-      - name: Initialize an empty list for our strings
-        set_fact:
-          my_strings: []
+
+    vars:
+      ip: []
+    
+    tasks: 
 
       - name: Setup a string variable
         set_fact:
           my_name: "{{ansible_host }}"
-
-      - name: Append string to list
-        set_fact:
-          my_strings: "{{ my_strings + [ my_name ] }}"
-
-      - debug: var=my_strings
-
-      - name: Append another item to the list
-        set_fact:
-          my_strings: "{{ my_strings  + [ 'Power' ] }}"
-
-      - debug: var=my_strings
+        register: ip
