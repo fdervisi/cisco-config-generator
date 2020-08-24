@@ -1,7 +1,7 @@
 ---
 
   - name: "First Play: Automate Routing Configs via Jinja2"
-    hosts: all
+    hosts: servers
 
     vars:
       ip: []
