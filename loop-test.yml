@@ -9,8 +9,7 @@
     tasks:
       - name: set_fact
         set_fact:
-          foo: "{{ foo }} + [ '{{ item }}' ]"
-        with: {{ ansible_host }}
+          foo: {{ ansible_host }}
         vars:
           foo: []
 
