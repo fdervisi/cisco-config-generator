@@ -1,8 +1,9 @@
 ---
 
   - name: "First Play: Automate Routing Configs via Jinja2"
-    hosts: localhost
+    hosts: routers
     tasks:
       - name: count to 3
+        delegate_to: 127.0.0.1
         debug: msg={{item}}
         with_items: [1, 2, 3]
