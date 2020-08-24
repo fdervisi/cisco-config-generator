@@ -9,7 +9,7 @@
 
       - name: Setup a string variable
         set_fact:
-          my_name: "Max"
+          my_name: "{{ansible_host }}"
 
       - name: Append string to list
         set_fact:
