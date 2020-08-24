@@ -10,4 +10,4 @@
       - name: check if
         delegate_to: 127.0.0.1
         debug: msg="PE Templte"
-        when: pe in host_groups
+        when: routers in host_groups
