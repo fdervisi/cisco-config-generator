@@ -19,4 +19,4 @@
       - name: check if bgp
         delegate_to: 127.0.0.1
         debug: msg="BGP Templte"
-        when: '"bgp" in host_groups'        
+        when: '"bgp" in host_groups'
