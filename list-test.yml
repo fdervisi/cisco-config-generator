@@ -10,7 +10,7 @@
 
       - name: Setup a string variable
         debug:
-          msg: "{{ lookup('template', 'templates/test.j2') }}"
+          msg: "{{ query('template', 'templates/test.j2') }}"
         register: ip
 
       - debug: var=ip
