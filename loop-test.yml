@@ -1,3 +1,4 @@
+hosts: localhost
 tasks:
   - name: count to 3
     debug: msg={{item}}
