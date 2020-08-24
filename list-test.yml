@@ -12,3 +12,5 @@
         set_fact:
           my_name: "{{ansible_host }}"
         register: ip
+
+      - debug: var=my_strings
