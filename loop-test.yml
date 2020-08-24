@@ -1,16 +1,19 @@
 ---
 
   - name: "First Play: Automate Routing Configs via Jinja2"
-    hosts: routers
+    hosts: all
     vars:
       gruppe: 
         - pe
         - router
     tasks:
-      #- name: count to 3
-      #  delegate_to: 127.0.0.1
-      #  debug: msg={{item}}
-      #  with_items: "{{ host_groups }}"
-      - debug:
-          msg: " IP: {{ item }}"
-        with_items: '{{ ansible_host }}'
+      - name: set_fact
+        set_fact:
+          foo: "{{ foo }} + [ '{{ item }}' ]"
+        with_items: {{ ansible_host }}
+        vars:
+          foo: []
+
+      - name: Print the var
+        debug:
+          var: foo
