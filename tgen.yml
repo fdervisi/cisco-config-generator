@@ -1,0 +1,236 @@
+---
+#!/usr/bin/ansible-playbook
+
+- hosts: all 
+#  become: yes
+
+  tasks:
+
+
+  - name: tgen_sfdc
+    cron:
+      name: tgen
+      minute: "*"
+      user: root
+      job: wget -O /dev/null salesforce.com >/dev/null 2>&1
+
+  - name: tgen_msft
+    cron:
+      name: tgen_msft
+      minute: "*"
+      user: root
+      job: wget -O /dev/null microsoft.com >/dev/null 2>&1
+
+  - name: tgen_workday
+    cron:
+      name: tgen_workday
+      minute: "*"
+      user: root
+      job: wget -O /dev/null workday.com >/dev/null 2>&1
+
+  - name: tgen_zoom
+    cron:
+      name: tgen_zoom
+      minute: "*"
+      user: root
+      job: wget -O /dev/null zoom.us >/dev/null 2>&1
+
+  - name: tgen_webex
+    cron:
+      name: tgen_webex
+      minute: "*"
+      user: root
+      job: wget -O /dev/null webex.com >/dev/null 2>&1
+
+  - name: tgen_slack
+    cron:
+      name: tgen_slack
+      minute: "*"
+      user: root
+      job: wget -O /dev/null https://slack.com >/dev/null 2>&1
+
+
+  - name: tgen_gmail
+    cron:
+      name: tgen_gmail
+      minute: "*"
+      user: root
+      job: wget -O /dev/null gmail.com >/dev/null 2>&1
+
+  - name: tgen_concur
+    cron:
+      name: tgen_concur
+      minute: "*"
+      user: root
+      job: wget -O /dev/null concursolutions.com >/dev/null 2>&1
+
+  - name: tgen_8x8
+    cron:
+      name: tgen_8x8
+      minute: "*"
+      user: root
+      job: wget -O /dev/null 8x8.com >/dev/null 2>&1
+
+
+  - name: tgen_ringcentral
+    cron:
+      name: tgen_ringcentral
+      minute: "*"
+      user: root
+      job: wget -O /dev/null ringcentral.com >/dev/null 2>&1
+
+  - name: tgen_box
+    cron:
+      name: tgen_box
+      minute: "*"
+      user: root
+      job: wget -O /dev/null box.com >/dev/null 2>&1
+
+  - name: tgen_dropbox
+    cron:
+      name: tgen_dropbox
+      minute: "*"
+      user: root
+      job: wget -O /dev/null dropbox.com >/dev/null 2>&1
+
+  - name: tgen_fb
+    cron:
+      name: tgen_fb
+      minute: "*"
+      user: root
+      job: wget -O /dev/null facebook.com >/dev/null 2>&1
+
+  - name: tgen_twitter
+    cron:
+      name: tgen_twitter
+      minute: "*"
+      user: root
+      job: wget -O /dev/null twitter.com >/dev/null 2>&1
+
+  - name: tgen_netflix
+    cron:
+      name: tgen_netflix
+      minute: "*"
+      user: root
+      job: wget -O /dev/null netflix.com >/dev/null 2>&1
+
+  - name: tgen_youtube
+    cron:
+      name: tgen_youtube
+      minute: "*"
+      user: root
+      job: wget -O /dev/null youtube.com >/dev/null 2>&1
+
+  - name: tgen_amzn
+    cron:
+      name: tgen_amzn
+      minute: "*"
+      user: root
+      job: wget -O /dev/null amazon.com >/dev/null 2>&1
+
+  - name: tgen_github
+    cron:
+      name: tgen_github
+      minute: "*"
+      user: root
+      job: wget -O /dev/null github.com >/dev/null 2>&1
+
+  - name: tgen_adp
+    cron:
+      name: tgen_adp
+      minute: "*"
+      user: root
+      job: wget -O /dev/null adp.com >/dev/null 2>&1
+
+  - name: tgen_snow
+    cron:
+      name: tgen_snow
+      minute: "*"
+      user: root
+      job: wget -O /dev/null servicenow.com >/dev/null 2>&1
+
+  - name: tgen_atlassian
+    cron:
+      name: tgen_atlassian
+      minute: "*"
+      user: root
+      job: wget -O /dev/null atlassian.com >/dev/null 2>&1
+
+  - name: tgen_marketo
+    cron:
+      name: tgen_marketo
+      minute: "*"
+      user: root
+      job: wget -O /dev/null marketo.com >/dev/null 2>&1
+
+  - name: tgen_tableau
+    cron:
+      name: tgen_tableau
+      minute: "*"
+      user: root
+      job: wget -O /dev/null tableau.com >/dev/null 2>&1
+
+  - name: tgen_speak
+    cron:
+      name: tgen_speak
+      minute: "*"
+      user: root
+      job: wget -O /dev/null silver-peak.com >/dev/null 2>&1
+
+  - name: tgen_bluejeans
+    cron:
+      name: tgen_bluejeans
+      minute: "*"
+      user: root
+      job: wget -O /dev/null bluejeans.com >/dev/null 2>&1
+
+
+  - name: tgen_skype
+    cron:
+      name: tgen_skype
+      minute: "*"
+      user: root
+      job: wget -O /dev/null skype.com >/dev/null 2>&1
+
+  - name: tgen_apple
+    cron:
+      name: tgen_apple
+      minute: "*"
+      user: root
+      job: wget -O /dev/null apple.com >/dev/null 2>&1
+
+  - name: tgen_icloud
+    cron:
+      name: tgen_icloud
+      minute: "*"
+      user: root
+      job: wget -O /dev/null icloud.com >/dev/null 2>&1
+
+  - name: tgen_hulu
+    cron:
+      name: tgen_hulu
+      minute: "*"
+      user: root
+      job: wget -O /dev/null hulu.com >/dev/null 2>&1
+
+  - name: tgen_hbogo
+    cron:
+      name: tgen_hbogo
+      minute: "*"
+      user: root
+      job: wget -O /dev/null hbogo.com >/dev/null 2>&1
+
+  - name: tgen_spotify
+    cron:
+      name: tgen_spotify
+      minute: "*"
+      user: root
+      job: wget -O /dev/null spotify.com >/dev/null 2>&1
+
+  - name: tgen_msft_docs_dl
+    cron:
+      name: tgen_msft_docs_dl
+      minute: "*/5"
+      user: root
+      job: wget -O /dev/null https://download.visualstudio.microsoft.com/download/pr/cf913e5d-120b-4404-8b63-6dafb01ec1b1/14c903afa12dbca00ff1a2b11ef2c0ce/aspnetcore-runtime-3.1.3-linux-musl-x64.tar.gz >/dev/null 2>&1
+
