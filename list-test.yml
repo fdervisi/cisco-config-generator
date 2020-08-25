@@ -23,7 +23,7 @@
           delay: 0               # No wait before first check (sec)
           timeout: 3             # Stop checking after timeout (sec)
         ignore_errors: yes
-        with_items: "{% for host in groups['servers'] %}
+        with_items: "({% for host in groups['servers'] %}
         {{ hostvars[host]['vm_interfaces'][1]['ip'] }}
-        {% endfor %}
+        {% endfor %}).split()
         "
