@@ -11,7 +11,7 @@
       - name: Setup a string variable
         debug:
           msg: "{{ lookup('template', 'templates/test.j2') }}"
-        register: ip.stdout
+        register: ip
 
       - debug: var=ip
 
@@ -23,4 +23,4 @@
           delay: 0               # No wait before first check (sec)
           timeout: 3             # Stop checking after timeout (sec)
         ignore_errors: yes
-        with_items: "{{ ip.split(',') }}"
+        with_items: "{{ ip.stdout }}"
