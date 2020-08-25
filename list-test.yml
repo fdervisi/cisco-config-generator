@@ -1,6 +1,6 @@
 ---
 
-  - name: "First Play: Automate Routing Configs via Jinja2"
+  - name: "Ping all Linux VMs"
     hosts: servers
 
     vars:
@@ -8,7 +8,7 @@
     
     tasks: 
 
-      - name: Setup a string variable
+      - name: Search for all Server IP Address in HOST_VAR folder and create a list
         debug:
           msg: "{{ lookup('template', 'templates/test.j2') }}"
         register: ip
@@ -23,5 +23,4 @@
           delay: 0               # No wait before first check (sec)
           timeout: 3             # Stop checking after timeout (sec)
         ignore_errors: yes
-        with_items: "{{ hostvars['{{ hostname }}']['vm_interfaces'][1]['ip'] }}
-        "
+        with_items: "{{ hostvars['{{ hostname }}']['vm_interfaces'][1]['ip'] }}"
