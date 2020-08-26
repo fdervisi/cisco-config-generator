@@ -26,4 +26,4 @@
           timeout: 3             # Stop checking after timeout (sec)
         ignore_errors: yes
         #with_items: "{{ hostvars['{{ hostname }}']['vm_interfaces'][1]['ip'] }}"
-        with_items: "{{ ip }}"
+        with_items: "{{ ip.stdout }}"
