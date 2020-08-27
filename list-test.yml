@@ -25,5 +25,6 @@
           delay: 0               # No wait before first check (sec)
           timeout: 3             # Stop checking after timeout (sec)
         ignore_errors: yes
-        #with_items: "{{ hostvars['{{ hostname }}']['vm_interfaces'][1]['ip'] }}"
-        with_items: "{{ ip_test }}"
+        with_items: "{{ hostvars['{{ hostname }}']['vm_interfaces'][1]['ip'] }}"
+        
+        #with_items: "{{ ip_test }}"
