@@ -15,7 +15,11 @@
           msg: "{{ lookup('template', 'templates/test.j2') }}"
         register: ip
 
-      - debug: var={{ ip["msg"] }}
+      - set_fact:
+          ip_list: "{{ ip.msg.split(',') }}"
+
+      #- debug: var={{ ip["msg"] }}
+      - debug: var=ip_list
 
       - name: Check all port numbers are accessible from current host
         wait_for:
@@ -28,3 +32,6 @@
         #with_items: "{{ hostvars['{{ hostname }}']['vm_interfaces'][1]['ip'] }}"
         
         with_items: "{{ ip_test }}"
+
+
+        ip_list: "{{ ip.msg.split(',') }}"
