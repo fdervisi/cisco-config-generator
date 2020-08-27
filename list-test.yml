@@ -35,4 +35,4 @@
         with_items: "{{ ip_test }}"
 
 
-        ip_list: "{{ ip.msg.split(',') }}"
+        # ip_list: "{{ ip.msg.split(',') }}"
