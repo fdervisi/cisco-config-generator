@@ -21,7 +21,7 @@
       #- debug: var={{ ip["msg"] }}
 
       - set_fact:
-          ip2: "{{ ip_list.split("\n") }}"
+          ip2: "{{ ip_list.split('\n') }}"
 
       - debug: 
           var: ip2
@@ -44,3 +44,5 @@
 
 
         # ip_list: "{{ ip.msg.split(',') }}"
+
+
