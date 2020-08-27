@@ -13,9 +13,9 @@
       - name: Search for all Server IP Address in HOST_VAR folder and create a list
         debug:
           msg: "{{ lookup('template', 'templates/test.j2') }}"
-        register: ip["msg"]
+        register: ip
 
-      - debug: var={{ ip | to_json }}
+      - debug: var={{ ip["msg"] | to_json }}
 
       - name: Check all port numbers are accessible from current host
         wait_for:
