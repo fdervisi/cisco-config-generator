@@ -15,7 +15,7 @@
           msg: "{{ lookup('template', 'templates/test.j2') }}"
         register: ip
 
-      - debug: var=ip
+      - debug: var={{ ip | to_json }}
 
       - name: Check all port numbers are accessible from current host
         wait_for:
