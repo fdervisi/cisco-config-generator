@@ -13,7 +13,7 @@
       - name: Search for all Server IP Address in HOST_VAR folder and create a list
         debug:
           msg: "{{ lookup('template', 'templates/test.j2') }}"
-        register: ip
+        register: ip["msg"]
 
       - debug: var={{ ip | to_json }}
 
