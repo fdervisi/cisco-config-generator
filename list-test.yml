@@ -44,4 +44,8 @@
         with_items: "{{ ip_test }}"
 
 
+<<<<<<< HEAD
         # ip_list: "{{ ip.msg.split(',') }}"
+=======
+        ip_list: "{{ ip.msg.split(',') }}"
+>>>>>>> parent of 495bffa... Update list-test.yml
