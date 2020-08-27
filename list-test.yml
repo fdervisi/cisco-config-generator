@@ -19,7 +19,8 @@
           ip_list: "{{ ip.msg.split(',') }}"
 
       #- debug: var={{ ip["msg"] }}
-      - debug: var=ip_list
+      - debug: 
+          var: ip_list
 
       - name: Check all port numbers are accessible from current host
         wait_for:
